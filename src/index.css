@@ -1,70 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
+  --main-bg-color: #041e42;
+  --main-text-color: #fff;
+  --main-accent-color: #ffcd29;
+  --secondry-text-color: #707c87;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+@font-face {
+  font-family: iransans;
+  src: url(./assets/iransans.ttf);
 }
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
+  width: 100vw;
+  overflow-y: hidden;
+  font-family: iransans;
+}
+
+header {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  direction: rtl;
+}
+
+.top-head {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 20px 250px;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.logo {
+  font-size: 35px;
+  gap: 4px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  color: var(--main-accent-color);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.header-options {
+  display: flex;
+  gap: 25px;
+  margin-right: auto;
+  align-items: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.HeaderOption {
+  display: flex;
+  gap: 10px;
+}
+
+.HeaderOptionIcon {
+  font-size: 30px;
+  color: var(--secondry-text-color);
+}
+.HeaderOptionContent {
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.search-product {
+  height: 35px;
+  display: flex;
+  gap: 5px;
+}
+
+.search-product input {
+  width: 600px;
+  border-radius: 2px;
+  border: none;
+  padding-right: 15px;
+  font-family: iransans;
+}
+
+.search-product button {
+  width: 100px;
+  border-radius: 2px;
+  border: none;
+  background-color: var(--main-accent-color);
+  color: var(--main-text-color);
+  font-family: iransans;
+  font-size: 13px;
+}
+
+.nav {
+  background-color: var(--main-bg-color);
+  display: flex;
+  padding: 0px 150px;
+  gap: 15px;
+  height: 50px;
+  border-top: 1px solid #40464c;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 11px;
+}
+.nav-item a {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+.nav-item {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav button {
+  height: 100%;
+  color: #fff;
+  background-color: var(--main-accent-color);
+  border: none;
+  font-family: iransans;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
