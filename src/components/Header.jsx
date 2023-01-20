@@ -1,8 +1,9 @@
 import React from "react";
-import { FaShopify, TfiMenu } from "../database/icons";
-import { headerOption, navList } from "../database/mockdata";
+import { FaShopify, TfiMenu, BsSearch } from "../database/icons";
+import { headerOption, navList, userNavInfo } from "../database/mockdata";
 import HeaderOption from "./HeaderOption";
 import { NavLink } from "react-router-dom";
+import UserNav from "./UserNav";
 
 const Header = () => {
   return (
@@ -21,6 +22,11 @@ const Header = () => {
             return <HeaderOption {...option} key={option.id} />;
           })}
         </div>
+        <ul className="nav__user nav__user-tophead">
+          {userNavInfo.map((item) => {
+            return <UserNav {...item} />;
+          })}
+        </ul>
       </div>
       <nav className="nav">
         <button className="nav__categories">
@@ -32,10 +38,24 @@ const Header = () => {
             return (
               <li className="nav-item">
                 <a href="#">{item.content}</a>
+                <span className="nav-item__active"></span>
               </li>
             );
           })}
         </ul>
+        <ul className="nav__user">
+          {userNavInfo.map((item) => {
+            return <UserNav {...item} />;
+          })}
+        </ul>
+        <div className="modal-btns">
+          <button className="search-modal-open">
+            <BsSearch />
+          </button>
+          <button className="search-modal-open">
+            <TfiMenu />
+          </button>
+        </div>
       </nav>
     </header>
   );

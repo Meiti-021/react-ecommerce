@@ -1,4 +1,10 @@
-import { FaTruck, BiSupport } from "./icons";
+import {
+  FaTruck,
+  BiSupport,
+  CgProfile,
+  FiShoppingCart,
+  RiHeart3Line,
+} from "./icons";
 
 const headerOption = [
   {
@@ -59,4 +65,43 @@ const navList = [
   },
 ];
 
-export { headerOption, navList };
+const shopInfo = [
+  {
+    icon: "",
+    counter: "",
+    title: "",
+    content: "",
+    address: "",
+  },
+  {
+    icon: "",
+    counter: "",
+    title: "",
+    content: "",
+    address: "",
+  },
+  {
+    icon: "",
+    counter: "",
+    title: "",
+    content: "",
+    address: "",
+  },
+];
+
+const userNavInfo = [
+  {
+    notification: "",
+    icon: <CgProfile />,
+  },
+  {
+    notification: 2,
+    icon: <RiHeart3Line />,
+  },
+  {
+    notification: 5,
+    icon: <FiShoppingCart />,
+  },
+];
+
+export { headerOption, navList, userNavInfo };
