@@ -4,6 +4,12 @@ import {
   CgProfile,
   FiShoppingCart,
   RiHeart3Line,
+  SiMotorola,
+  SiOneplus,
+  SiXiaomi,
+  SiNokia,
+  SiSamsung,
+  SiApple,
 } from "./icons";
 
 const headerOption = [
@@ -104,4 +110,37 @@ const userNavInfo = [
   },
 ];
 
-export { headerOption, navList, userNavInfo };
+const brandsData = [
+  {
+    icon: <SiOneplus />,
+    color: "#eb0029",
+    size: "",
+  },
+  {
+    icon: <SiXiaomi />,
+    color: " #fd4900",
+    size: "",
+  },
+  {
+    icon: <SiNokia />,
+    color: "#183693",
+    size: "75px",
+  },
+  {
+    icon: <SiSamsung />,
+    color: "#1428a0",
+    size: "75px",
+  },
+  {
+    icon: <SiApple />,
+    color: "#555555",
+    size: "",
+  },
+  {
+    icon: <SiMotorola />,
+    color: "#000",
+    size: "",
+  },
+];
+
+export { headerOption, navList, userNavInfo, brandsData };

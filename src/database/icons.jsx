@@ -5,6 +5,14 @@ import { FiShoppingCart } from "react-icons/fi";
 import { TfiMenu } from "react-icons/tfi";
 import { RiHeart3Line } from "react-icons/ri";
 import { BsSearch } from "react-icons/bs";
+import {
+  SiMotorola,
+  SiOneplus,
+  SiXiaomi,
+  SiNokia,
+  SiSamsung,
+  SiApple,
+} from "react-icons/si";
 
 export {
   BiSupport,
@@ -15,4 +23,10 @@ export {
   FiShoppingCart,
   RiHeart3Line,
   BsSearch,
+  SiMotorola,
+  SiOneplus,
+  SiXiaomi,
+  SiNokia,
+  SiSamsung,
+  SiApple,
 };

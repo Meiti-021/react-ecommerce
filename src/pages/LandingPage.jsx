@@ -1,11 +1,16 @@
 import React from "react";
+import BrandsCrousel from "../components/BrandsCrousel";
+import Hero from "../components/Hero";
+import TopTrends from "../components/TopTrends";
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <a href="#" className="landing-page__hero">
-        <img src="./assets/main/intro.jpg" alt="" />
-      </a>
+      <Hero />
+      <main>
+        <BrandsCrousel />
+        <TopTrends />
+      </main>
     </div>
   );
 };
