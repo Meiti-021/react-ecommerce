@@ -426,5 +426,5 @@ main {
   transition: 0.2s border-bottom;
 }
 .best-sellers__btn-active {
-  border-bottom: 10px solid var(--main-bg-color);
+  border-bottom: 5px solid var(--main-bg-color);
 }
