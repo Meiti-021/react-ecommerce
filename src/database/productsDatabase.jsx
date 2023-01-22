@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: "0bd85b",
+    id: "0bd85b.jpg",
     name: "هندزفری بلوتوث شیائومی مدل Redmi Buds Essential",
     categories: ["Wireless Headphones", "Headphones"],
     color: "black",
@@ -18,7 +18,7 @@ export const products = [
     reviews: "102",
   },
   {
-    id: "a602d0",
+    id: "a602d0.jpg",
     name: "هدفون شیائومی مدل Headphones Piston Basic",
     categories: ["Wireless Headphones", "Headphones"],
     color: "black",
@@ -37,7 +37,7 @@ export const products = [
     reviews: "20",
   },
   {
-    id: "3945ac",
+    id: "3945ac.jpg",
     name: "هندزفری بلوتوث شیائومی مدل Mibro Earbuds 2",
     categories: ["Wireless Headphones", "Headphones"],
     model: "Mibro Earbuds2 XPEJ004 TWS Earbuds",
@@ -56,7 +56,7 @@ export const products = [
     reviews: "18",
   },
   {
-    id: "aafbab",
+    id: "aafbab.jpg",
     name: "هندزفری بلوتوث کیو سی وای مدل QCY T1C",
     model: "QCY T1C TWS Bluetooth Earphones Wireless Earbuds",
     categoreis: ["Wireless Headphones", "Headphones"],
@@ -120,7 +120,7 @@ export const products = [
     reviews: "45",
   },
   {
-    id: "c0fa97",
+    id: "c0fa97.jpg",
     name: "هدفون شیائومی مدل ۱More Design Piston Fit",
     model: "1MORE PISTON IN-EAR HEADPHONES E1009",
     categoreis: ["Headphones"],
@@ -148,7 +148,7 @@ export const products = [
     reviews: "55",
   },
   {
-    id: "3ad265",
+    id: "3ad265.jpg",
     name: "هندزفری وان مور مدل 1More Triple Driver In-Ear E1001",
     model: "1MORE Triple Driver In-Ear Earphones Hi-Res Headphones E1001",
     categoreis: ["Headphones"],
@@ -176,7 +176,7 @@ export const products = [
     reviews: "35",
   },
   {
-    id: "99627e",
+    id: "99627e.jpg",
     name: "هندزفری بلوتوث کیو سی وای مدل QCY T13",
     model: "QCY T13 True Wireless Bluetooth Earbuds",
     categoreis: ["Wireless Headphones", "Headphones"],
@@ -204,7 +204,7 @@ export const products = [
     reviews: "44",
   },
   {
-    id: "4e5f09",
+    id: "4e5f09.jpg",
     name: "هندزفری بلوتوث وان مور مدل 1MORE Piston Buds",
     model: "1MORE Piston Buds ECS3001T",
     categoreis: ["Wireless Headphones", "Headphones"],
@@ -236,7 +236,7 @@ export const products = [
     reviews: "90",
   },
   {
-    id: "b2835d",
+    id: "b2835d.jpg",
     name: "هندزفری بلوتوث اپل مدل Earphone 2 Basic",
     model: "Xiaomi Mi True Wireless Earphone 2 Basic",
     categoreis: ["Wireless Headphones", "Headphones"],
@@ -264,7 +264,7 @@ export const products = [
     reviews: "60",
   },
   {
-    id: "609214",
+    id: "609214.jpg",
     name: "هندزفری بلوتوث دور گردنی اومتینگ وان مور مدل 1More EO008 Omthing AirFree Lace",
     model: "1More EO008 Omthing AirFree Lace Wireless Headphones",
     categoreis: ["Headphones"],
@@ -372,7 +372,7 @@ export const products = [
     reviews: "373",
   },
   {
-    id: "1865c3",
+    id: "1865c3.jpg",
     name: "هدفون بی سیم ناتینگ مدل Nothing Ear 1",
     model: "Nothing Ear 1 Wireless Earbuds",
     categoreis: ["Wireless Headphones", "Headphones"],
@@ -400,7 +400,7 @@ export const products = [
     reviews: "30",
   },
   {
-    id: "909315",
+    id: "909315.jpg",
     name: "هندزفری بلوتوث بلک شارک Black Shark joybuds",
     model: "Black Shark Fengming True Wireless Bluetooth Headset",
     categoreis: ["Wireless Headphones", "Headphones"],
@@ -512,7 +512,7 @@ export const products = [
     reviews: "150",
   },
   {
-    id: "068db9",
+    id: "068db9.jpg",
     name: "هندزفری بلوتوث کیو سی وای مدل QCY T12S",
     model: "هندزفری بلوتوث کیو سی وای مدل QCY T12S",
     categoreis: ["Wireless Headphones", "Headphones"],
@@ -544,7 +544,7 @@ export const products = [
     reviews: "36",
   },
   {
-    id: "a8593f",
+    id: "a8593f.jpg",
     name: "هندزفری بلوتوث وان پلاس مدل E501A",
     model: "OnePlus Buds Bluetooth Handsfree E501A",
     categoreis: ["Wireless Headphones", "Headphones"],
