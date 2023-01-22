@@ -1,4 +1,5 @@
 import React from "react";
+import BestSellers from "../components/BestSellers";
 import BrandsCrousel from "../components/BrandsCrousel";
 import Hero from "../components/Hero";
 import TopTrends from "../components/TopTrends";
@@ -10,6 +11,7 @@ const LandingPage = () => {
       <main>
         <BrandsCrousel />
         <TopTrends />
+        <BestSellers />
       </main>
     </div>
   );

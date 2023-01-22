@@ -336,6 +336,9 @@ main {
   gap: 25px;
   position: relative;
   right: 7px;
+  top: -30px;
+  background-color: var(--main-text-color);
+  z-index: 2;
 }
 
 .brands {
@@ -396,4 +399,32 @@ main {
     grid-template-rows: 250px 250px;
     gap: 15px;
   }
+}
+
+.best-sellers {
+  width: 100%;
+  text-align: center;
+  margin-top: 25px;
+}
+.best-sellers h2 {
+  margin-bottom: 20px;
+}
+
+.best-sellers__headers {
+  display: grid;
+  width: 100%;
+  height: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100%;
+}
+
+.best-sellers__btn {
+  border: none;
+  font-family: iransans;
+  background-color: #fff;
+  border-bottom: 1px solid var(--main-bg-color);
+  transition: 0.2s border-bottom;
+}
+.best-sellers__btn-active {
+  border-bottom: 10px solid var(--main-bg-color);
 }
