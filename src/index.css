@@ -7,7 +7,9 @@
   --main-bg-color: #041e42;
   --main-text-color: #fff;
   --main-accent-color: #ffcd29;
+  --main-second-accent-color: #dd975b;
   --secondry-text-color: #707c87;
+  --third-text-color: #ef262c;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -328,15 +330,14 @@ header {
 
 main {
   width: 95%;
-  max-width: 1000px;
   margin: 0 auto;
   padding: 25px 0px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 25px;
   position: relative;
   right: 7px;
-  top: -30px;
   background-color: var(--main-text-color);
   z-index: 2;
 }
@@ -374,6 +375,7 @@ main {
   overflow-x: scroll;
   overflow-y: hidden;
   width: 100%;
+  max-width: 1000px;
   height: 100px;
   position: relative;
 }
@@ -381,6 +383,8 @@ main {
   display: none;
 }
 .top-trends {
+  width: 100%;
+  max-width: 1000px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 250px;
@@ -402,12 +406,14 @@ main {
 }
 
 .best-sellers {
-  width: 100%;
+  width: 100vw;
   text-align: center;
   margin-top: 25px;
 }
+
 .best-sellers h2 {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .best-sellers__headers {
@@ -416,15 +422,148 @@ main {
   height: 50px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 100%;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px;
 }
 
 .best-sellers__btn {
   border: none;
   font-family: iransans;
   background-color: #fff;
-  border-bottom: 1px solid var(--main-bg-color);
   transition: 0.2s border-bottom;
 }
 .best-sellers__btn-active {
-  border-bottom: 5px solid var(--main-bg-color);
+  border-bottom: 5px solid var(--main-accent-color);
+}
+
+.best-sellers__products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  place-items: center;
+  padding: 25px 0px;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product404 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  direction: rtl;
+  grid-column: span 3;
+  flex-direction: column-reverse;
+}
+
+.error-icon {
+  font-size: 45px;
+  color: var(--main-accent-color);
+}
+
+.best-product {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  direction: rtl;
+  background-color: var(--main-text-color);
+  border-radius: 15px;
+}
+
+.best-product__title {
+  font-size: 14px;
+}
+
+.best-product__figure {
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  position: relative;
+}
+
+.best-product__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.best-product__offer {
+  position: absolute;
+  background-color: var(--main-bg-color);
+  padding: 15px;
+  border-radius: 50%;
+  color: var(--main-accent-color);
+  left: 25px;
+  bottom: 50px;
+}
+.star-rating {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  color: var(--main-second-accent-color);
+  font-size: 23px;
+}
+
+.best-product-rating {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+}
+
+.rate-number {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #707c87;
+}
+
+.best-product__condition {
+  font-size: 11px;
+  color: rgb(123, 194, 17);
+}
+
+.best-product__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  align-items: center;
+}
+
+.best-product__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.off-price {
+  font-size: 13px;
+  text-decoration: line-through;
+  color: var(--secondry-text-color);
+  margin-bottom: -6px;
+}
+.on-price {
+  color: var(--third-text-color);
+}
+
+.best-product__buy-link {
+  display: block;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 22px;
+  color: var(--main-bg-color);
+}
+
+.best-sellers__products-container {
+  width: 100vw;
+  background-color: #dad9d9;
+  padding: 0px 25px;
 }

@@ -1,7 +1,10 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import BestProductsSlice from "../stats/features/BestSellersSlice";
+import { useSelector, useDispatch } from "react-redux";
+import BestProducts from "./BestProducts";
+import { setPopular } from "../stats/features/BestSellersSlice";
+import Product404 from "./ProductNotFound";
 
 const BestSellers = () => {
   const [activeBtn, setActiveBtn] = useState({
@@ -9,8 +12,12 @@ const BestSellers = () => {
     news: false,
     offers: false,
   });
-  const x = useSelector((state) => state.bests);
-  console.log(x);
+  const ProductList = useSelector((state) => state.bests.products);
+  const disPatch = useDispatch();
+  useEffect(() => {
+    disPatch(setPopular());
+  }, []);
+
   return (
     <div className="best-sellers">
       <h2 className="best-sellers__title">برترین ها</h2>
@@ -43,7 +50,17 @@ const BestSellers = () => {
           پرتخفیف ترین ها
         </button>
       </div>
-      <div className="best-sellers__products"></div>
+      <div className="best-sellers__products-container">
+        <div className="best-sellers__products">
+          {ProductList.length ? (
+            ProductList.map((item) => {
+              return <BestProducts {...item} />;
+            })
+          ) : (
+            <Product404 />
+          )}
+        </div>
+      </div>
     </div>
   );
 };

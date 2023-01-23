@@ -1,4 +1,4 @@
-export const products = [
+export const AllProducts = [
   {
     id: "0bd85b.jpg",
     name: "هندزفری بلوتوث شیائومی مدل Redmi Buds Essential",
