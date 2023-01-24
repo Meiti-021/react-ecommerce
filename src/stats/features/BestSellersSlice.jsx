@@ -27,7 +27,7 @@ const BestProductsSlice = createSlice({
     },
     setBestOffers: (state) => {
       const newArray = AllProducts.sort((a, b) => {
-        return a.priceOff > b.priceOff;
+        return a.priceOn - a.priceOff > b.priceOn - b.priceOff;
       });
       state.products = newArray;
     },

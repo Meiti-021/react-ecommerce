@@ -414,6 +414,7 @@ main {
 .best-sellers h2 {
   margin-bottom: 20px;
   text-align: center;
+  font-size: 20px;
 }
 
 .best-sellers__headers {
@@ -527,7 +528,6 @@ main {
 
 .best-product__condition {
   font-size: 11px;
-  color: rgb(123, 194, 17);
 }
 
 .best-product__footer {
@@ -566,7 +566,7 @@ main {
 
 .best-sellers__products-container {
   width: 100vw;
-  background-color: #e6e5e5;
+  background-color: #ededed;
   padding-right: 25px;
   padding-left: 25px;
 }
@@ -580,5 +580,137 @@ main {
 @media (max-width: 650px) {
   .best-sellers__products {
     grid-template-columns: 1fr;
+  }
+}
+
+.last-dealers {
+  margin-top: 150px;
+  width: 100vw;
+  text-align: center;
+}
+.last-dealers h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.last-dealers__headers {
+  display: grid;
+  width: 80%;
+  height: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.last-dealers__btn {
+  border: none;
+  font-family: iransans;
+  background-color: #fff;
+  transition: 0.2s border-bottom;
+}
+.last-dealers__btn-active {
+  border-bottom: 5px solid var(--main-accent-color);
+}
+
+.last-dealers__products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  place-items: center;
+  padding: 25px 0px;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.last-dealers__products-container {
+  width: 100vw;
+  background-color: #ededed;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.last-dealer-product {
+  background-color: var(--main-text-color);
+  padding: 45px;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+.last-dealer-product__figure {
+  width: 100%;
+  height: 70%;
+}
+.last-dealer-product__figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.last-dealer-product:first-child {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.last-dealer-product__title {
+  font-size: 12px;
+}
+.last-dealer-product:hover .last-dealer-product__btns {
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+
+.last-dealer-product__btns {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+  gap: 70px;
+  opacity: 0;
+  transition: 0.2s opacity, 0.5s transform;
+  transform: translate(0px, 10px);
+}
+
+.last-dealer-product-btn {
+  background-color: transparent;
+  color: var(--main-text-color);
+  font-size: 25px;
+  border: none;
+  transition: 0.2s color;
+  color: #041e42;
+}
+.last-dealer-product-btn:hover {
+  color: #ef262c;
+}
+
+.last-dealers__products-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+}
+
+@media (max-width: 900px) {
+  .last-dealers__products {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
   }
 }
