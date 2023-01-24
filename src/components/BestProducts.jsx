@@ -5,11 +5,11 @@ import { FiShoppingCart } from "../database/icons";
 const BestProducts = ({
   id,
   name,
-  offer,
   reviews,
   rate,
   priceOn,
-  PriceOff,
+  priceOff,
+  exist,
 }) => {
   return (
     <article className="best-product">
@@ -20,11 +20,15 @@ const BestProducts = ({
           alt=""
           className="best-product__image"
         />
-        {PriceOff && (
+        {priceOff ? (
           <div className="best-product__offer">
             <p>تخفیف</p>
-            <p>{`${(+PriceOff * 100) / +priceOn}%`}</p>
+            <p>{`${Math.abs(
+              Math.floor(((priceOn - priceOff) * 100) / priceOn)
+            )}%`}</p>
           </div>
+        ) : (
+          void 0
         )}
       </figure>
       <div className="best-product-rating">
@@ -33,10 +37,22 @@ const BestProducts = ({
           ({reviews}) {rate}
         </span>
       </div>
-      <div className="best-product__condition">موجود</div>
+      {exist ? (
+        <div
+          className="best-product__condition"
+          style={{ color: "rgb(123, 194, 17)" }}
+        >
+          موجود
+        </div>
+      ) : (
+        <div className="best-product__condition" style={{ color: "red" }}>
+          ناموجود
+        </div>
+      )}
+
       <div className="best-product__footer">
         <div className="best-product__price">
-          <p className="off-price">{PriceOff || 0} تومان</p>
+          {priceOff !== 0 && <p className="off-price">{priceOff} تومان</p>}
           <p className="on-price">{priceOn} تومان</p>
         </div>
         <div className="best-product__btns">

@@ -474,10 +474,12 @@ main {
   direction: rtl;
   background-color: var(--main-text-color);
   border-radius: 15px;
+  max-width: 380px;
 }
 
 .best-product__title {
   font-size: 14px;
+  height: 50px;
 }
 
 .best-product__figure {
@@ -564,6 +566,19 @@ main {
 
 .best-sellers__products-container {
   width: 100vw;
-  background-color: #dad9d9;
-  padding: 0px 25px;
+  background-color: #e6e5e5;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+@media (max-width: 900px) {
+  .best-sellers__products {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+}
+@media (max-width: 650px) {
+  .best-sellers__products {
+    grid-template-columns: 1fr;
+  }
 }

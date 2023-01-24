@@ -14,14 +14,26 @@ const BestProductsSlice = createSlice({
       });
       const topSellers = topRatedItems
         .sort((a, b) => {
-          a.reviews > b.reviews;
+          return a.reviews > b.reviews;
         })
         .slice(0, 3);
       state.products = topSellers;
     },
+    setNews: (state) => {
+      const sortedArray = AllProducts.sort((a, b) => {
+        return a.date < b.date;
+      }).slice(0, 3);
+      state.products = sortedArray;
+    },
+    setBestOffers: (state) => {
+      const newArray = AllProducts.sort((a, b) => {
+        return a.priceOff > b.priceOff;
+      });
+      state.products = newArray;
+    },
   },
 });
 
-export const { setPopular } = BestProductsSlice.actions;
+export const { setPopular, setNews, setBestOffers } = BestProductsSlice.actions;
 
 export default BestProductsSlice.reducer;

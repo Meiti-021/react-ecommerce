@@ -9,24 +9,19 @@ import {
 const StarRating = ({ rate }) => {
   const [star, setStar] = useState([]);
   useEffect(() => {
-    const fakeNumber = rate;
-    const newArray = [];
-    let total = 5;
-    for (let i = 0; i < Math.floor(fakeNumber); i++) {
-      newArray.push("full");
-      total--;
+    const result = [];
+    for (let i = 0; i < Math.floor(rate); i++) {
+      result.push("full");
     }
-    if (fakeNumber - Math.floor(fakeNumber) !== 0) {
-      newArray.push("half");
+    let rest = 5 - rate;
+    if (rest - Math.floor(rest) > 0) {
+      result.push("half");
+      rest = rest - 1;
     }
-    if (total > 1) {
-      for (let i = 0; i < total; i++) {
-        total -= 1;
-        newArray.push("empty");
-      }
+    for (let j = 0; j < rest; j++) {
+      result.push("empty");
     }
-    console.log(newArray);
-    setStar(newArray);
+    setStar(result);
   }, []);
   return (
     <div className="star-rating">
