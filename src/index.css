@@ -768,3 +768,71 @@ main {
     font-size: 70px;
   }
 }
+
+.newsletters-signup {
+  min-height: 150px;
+  background-color: var(--main-bg-color);
+  width: 100vw;
+  color: var(--main-text-color);
+  padding: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  direction: rtl;
+}
+
+.newsletters-signup__title {
+  font-size: 25px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.newsletters-signup__description {
+  font-size: 15px;
+  color: var(--secondry-text-color);
+}
+.newsletters-signup__description span {
+  color: var(--main-accent-color);
+}
+
+.newsletters-signup__form {
+  display: flex;
+  height: 50px;
+  max-width: 500px;
+  width: 50%;
+}
+
+.newsletters-signup__form input {
+  width: 80%;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  padding: 10px;
+  font-family: iransans;
+}
+.newsletters-signup__form button {
+  width: 20%;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  background-color: var(--main-accent-color);
+  color: var(--main-bg-color);
+  font-family: iransans;
+  font-weight: bold;
+}
+
+@media (max-width: 1500px) {
+  .newsletters-signup {
+    flex-direction: column;
+    gap: 50px;
+    padding: 80px 25px;
+    text-align: center;
+  }
+  .newsletters-signup > * {
+    width: 100%;
+  }
+  .newsletters-signup__title {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  .newsletters-signup__description {
+    font-size: 13px;
+  }
+}
