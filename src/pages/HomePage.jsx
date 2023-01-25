@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import LandingPage from "./LandingPage";
 
@@ -7,6 +8,7 @@ const HomePage = () => {
     <div className="HomePage">
       <Header />
       <LandingPage />
+      <Footer />
     </div>
   );
 };

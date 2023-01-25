@@ -173,4 +173,99 @@ const serviceOptions = [
   },
 ];
 
-export { headerOption, navList, userNavInfo, brandsData, serviceOptions };
+const sitemapData = [
+  {
+    title: "ارتباط با ما",
+    options: [
+      {
+        address: "#",
+        content:
+          "تهران،خیابان ولیعصر، نرسیده بلوار امام خمینیو پلاک 99، ساختمان شرکت شاپیفای",
+      },
+    ],
+  },
+  {
+    title: "رده بندی محصولات",
+    options: [
+      {
+        address: "#",
+        content: "کامپیوتر و لوازم جانبی کامپیوتر",
+      },
+      {
+        address: "#",
+        content: "لپتاپ وتبلت",
+      },
+      {
+        address: "#",
+        content: "موبایل و لوازم جانبی",
+      },
+      {
+        address: "#",
+        content: "تلوزیون هوشمند",
+      },
+    ],
+  },
+  {
+    title: "اینجا بپرس",
+    options: [
+      {
+        address: "#",
+        content: "در مورد حساب کاربری",
+      },
+      {
+        address: "#",
+        content: "کالاهای مرجوعی",
+      },
+      {
+        address: "#",
+        content: "سیاست های ارسال محصولات",
+      },
+      {
+        address: "#",
+        content: "تعویض کالا",
+      },
+      {
+        address: "#",
+        content: "سیاست های حریم خصوصی",
+      },
+      {
+        address: "#",
+        content: "مجوزها و گواهی ها",
+      },
+    ],
+  },
+  {
+    title: "آشنایی با ما",
+    options: [
+      {
+        address: "#",
+        content: "حریم خصوصی",
+      },
+      {
+        address: "#",
+        content: "درباره ما",
+      },
+      {
+        address: "#",
+        content: "ارجاع کالا",
+      },
+      {
+        address: "#",
+        content: "مجوزها و گواهی ها",
+      },
+      {
+        address: "#",
+        content: "ارتباط با ما",
+      },
+    ],
+  },
+];
+
+export {
+  headerOption,
+  navList,
+  userNavInfo,
+  brandsData,
+  serviceOptions,
+  sitemapData,
+};
