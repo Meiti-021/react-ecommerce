@@ -10,6 +10,9 @@ import {
   SiNokia,
   SiSamsung,
   SiApple,
+  TbDiscount2,
+  TbTruckDelivery,
+  BsCreditCard2Back,
 } from "./icons";
 
 const headerOption = [
@@ -143,4 +146,31 @@ const brandsData = [
   },
 ];
 
-export { headerOption, navList, userNavInfo, brandsData };
+const serviceOptions = [
+  {
+    id: "jkhsadbklsaj",
+    icon: <BiSupport />,
+    title: "پشتیبانی آنلاین",
+    description: "پاسخگویی و پشتیبانی 24 ساعته در 7 روز هفته",
+  },
+  {
+    id: "juasdkbvlkvlkvl",
+    icon: <TbDiscount2 />,
+    title: "تخفیف عضویت",
+    description: "بالای 10% تخفیف برای اعضای ویژه سایت ",
+  },
+  {
+    id: "juasdkbvlkvlkvjkjbkgvsdbv",
+    icon: <TbTruckDelivery />,
+    title: "ارسال رایگان",
+    description: "ارسال رایگان و بدون محدودیت به سراسر کشور",
+  },
+  {
+    id: "juasdkbvlkvlkvjkjbkascbjabckgvsdbv",
+    icon: <BsCreditCard2Back />,
+    title: "ارجاع کالا",
+    description: "ضمانت ارجاع کالا و هزینه پرداخت شده ",
+  },
+];
+
+export { headerOption, navList, userNavInfo, brandsData, serviceOptions };

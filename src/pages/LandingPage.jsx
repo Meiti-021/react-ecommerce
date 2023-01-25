@@ -3,6 +3,7 @@ import BestSellers from "../components/BestSellers";
 import BrandsCrousel from "../components/BrandsCrousel";
 import Hero from "../components/Hero";
 import LastDealers from "../components/LastDealers";
+import ServiceOptions from "../components/ServiceOptions";
 import TopTrends from "../components/TopTrends";
 
 const LandingPage = () => {
@@ -14,6 +15,7 @@ const LandingPage = () => {
         <TopTrends />
         <BestSellers />
         <LastDealers />
+        <ServiceOptions />
       </main>
     </div>
   );
