@@ -16,6 +16,13 @@ import {
 } from "react-icons/si";
 
 import { IoStarSharp, IoStarOutline, IoStarHalfOutline } from "react-icons/io5";
+import {
+  BsGithub,
+  BsFacebook,
+  BsTelegram,
+  BsInstagram,
+  BsTwitter,
+} from "react-icons/bs";
 
 export {
   BiSupport,
@@ -39,4 +46,9 @@ export {
   TbTruckDelivery,
   TbDiscount2,
   BsCreditCard2Back,
+  BsGithub,
+  BsFacebook,
+  BsTelegram,
+  BsInstagram,
+  BsTwitter,
 };

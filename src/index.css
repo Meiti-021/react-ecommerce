@@ -882,3 +882,33 @@ main {
     row-gap: 50px;
   }
 }
+
+.footer__contact {
+  display: flex;
+  justify-content: space-around;
+  direction: rtl;
+  align-items: center;
+  padding: 100px 0px;
+  border-bottom: 1px solid #707c87;
+}
+
+.footer-logo {
+  color: var(--main-accent-color);
+  font-size: 70px;
+}
+
+.social-media-links {
+  display: flex;
+  list-style: none;
+  font-size: 30px;
+  gap: 15px;
+  color: var(--secondry-text-color);
+}
+
+.footer__copy-right {
+  direction: rtl;
+  text-align: center;
+  padding: 30px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+}
