@@ -1,5 +1,5 @@
 import { BiSupport } from "react-icons/bi";
-import { FaTruck, FaShopify } from "react-icons/Fa";
+import { FaTruck, FaShopify, FaSortAmountDownAlt } from "react-icons/Fa";
 import { CgProfile } from "react-icons/cg";
 import { FiShoppingCart } from "react-icons/fi";
 import { TfiMenu } from "react-icons/tfi";
@@ -23,6 +23,7 @@ import {
   BsInstagram,
   BsTwitter,
 } from "react-icons/bs";
+import { FaShoppingCart } from "react-icons/fa";
 
 export {
   BiSupport,
@@ -51,4 +52,6 @@ export {
   BsTelegram,
   BsInstagram,
   BsTwitter,
+  FaSortAmountDownAlt,
+  FaShoppingCart,
 };
