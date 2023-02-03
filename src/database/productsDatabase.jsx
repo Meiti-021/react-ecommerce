@@ -706,7 +706,7 @@ export const AllProducts = [
     engName: "",
     model: "Xiaomi Mi 10 5G 8/256 GB",
     categories: ["Mobile"],
-    priceOn: "",
+    priceOn: 12000000,
     priceOff: null,
     brand: "",
     features: [
@@ -803,7 +803,7 @@ export const AllProducts = [
     networkType: 5,
   },
   {
-    id: "3cc018,jpg",
+    id: "3cc018.jpg",
     name: "گوشی موبایل شیائومی Poco F3 5G ظرفیت 256/8 گیگابایت",
     engName: "",
     model: "Poco F3 5G",
@@ -1177,7 +1177,7 @@ export const AllProducts = [
     networkType: 4,
   },
   {
-    id: "f80ada.jpeg",
+    id: "f80ada.jpg",
     name: " Redmi Note 9 ظرفیت 64/3 گیگابایت",
     engName: "",
     model: "Note 9",

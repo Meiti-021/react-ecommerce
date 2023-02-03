@@ -927,7 +927,6 @@ main {
   font-size: 11px;
   padding: 5px 10px;
   gap: 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -1081,6 +1080,7 @@ main {
   font-size: 12px;
   padding: 0 25px;
   font-weight: bold;
+  height: 55px;
 }
 
 .product__footer {
