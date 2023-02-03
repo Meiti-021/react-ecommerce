@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Product from "../components/Product";
-import { FaSortAmountDownAlt } from "../database/icons";
+import { FaSortAmountDownAlt, TfiMenu } from "../database/icons";
 import { AllProducts } from "../database/productsDatabase";
 
 const MobilePage = () => {
@@ -10,6 +10,7 @@ const MobilePage = () => {
     })
   );
   const [page, setPage] = useState(1);
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [paginationBtns, setPaginationBtns] = useState([]);
   const [filter, setFilter] = useState({
     core8: false,
@@ -175,10 +176,29 @@ const MobilePage = () => {
             );
           })}
         </div>
+        <button
+          className={
+            isFilterModalOpen ? "modal-btn modal-btn-active" : "modal-btn"
+          }
+          title="فیلتر"
+          onClick={() => {
+            isFilterModalOpen
+              ? setIsFilterModalOpen(false)
+              : setIsFilterModalOpen(true);
+          }}
+        >
+          <TfiMenu />
+        </button>
       </div>
       <div className="mobile-page-product-container">
         <div className="mobile-page__products">
-          <div className="mobile-page__products-side-menu">
+          <div
+            className={
+              isFilterModalOpen
+                ? "mobile-page__products-side-menu mobile-page__products-side-menu-modal-active"
+                : "mobile-page__products-side-menu mobile-page__products-side-menu-modal-active mobile-page__products-side-menu-modal-diactive"
+            }
+          >
             <p className="filter-title">نمایش محصولات برحسب: </p>
             <div className="filter-by">
               <p>هسته پردازنده </p>
