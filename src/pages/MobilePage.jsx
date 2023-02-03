@@ -141,6 +141,7 @@ const MobilePage = () => {
       });
       setMobileProducts(sortedArray);
     }
+    setPage(1);
   }, [filter, sortSystem, priceLimit]);
   return (
     <div className="mobile-page">
