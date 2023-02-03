@@ -1,10 +1,10 @@
 import React from "react";
 import { FaShoppingCart, RiHeart3Line, BiSupport } from "../database/icons";
 
-const Product = () => {
+const Product = ({ name, id, priceOff, priceOn, exist }) => {
   return (
     <div className="product">
-      <p className="product__off">10%</p>
+      <p className="product__off">{exist ? "موجود" : "ناموجود"}</p>
       <div className="product__btns">
         <button>
           <RiHeart3Line />
@@ -14,18 +14,20 @@ const Product = () => {
         </button>
       </div>
       <figure>
-        <img src="./assets/products/f80ada.jpg" alt="" />
+        <img src={`./assets/products/${id}`} alt="" />
       </figure>
-      <p className="product__name">
-        گوشی موبایل شیائومی Mi 10 Lite 5G ظرفیت 128/6 گیگابایت
-      </p>
+      <p className="product__name">{name}</p>
       <div className="product__footer">
         <div className="product__footer-price">
-          <p className="product__price-on">
-            21000000 <span>تومان</span>
-          </p>
+          {priceOff ? (
+            <p className="product__price-on">
+              {priceOn} <span>تومان</span>
+            </p>
+          ) : (
+            void 0
+          )}
           <p className="product__price-offer">
-            2000000 <span>تومان</span>
+            {priceOff ? priceOff : priceOn} <span>تومان</span>
           </p>
         </div>
         <div className="product__footer-link">

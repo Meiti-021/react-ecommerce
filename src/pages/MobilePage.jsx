@@ -1,21 +1,180 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Product from "../components/Product";
 import { FaSortAmountDownAlt } from "../database/icons";
 import { AllProducts } from "../database/productsDatabase";
 
 const MobilePage = () => {
+  const [mobileProducts, setMobileProducts] = useState(
+    AllProducts.filter((product) => {
+      return product.categories.indexOf("Mobile") !== -1;
+    })
+  );
+  const [page, setPage] = useState(1);
+  const [paginationBtns, setPaginationBtns] = useState([]);
+  const [filter, setFilter] = useState({
+    core8: false,
+    core4: false,
+    core2: false,
+    ram16: false,
+    ram8: false,
+    ram4: false,
+    camera108: false,
+    camera60: false,
+  });
+  const [sortSystem, setSortSystem] = useState("latest");
+  const [priceLimit, setPriceLimit] = useState({
+    min: 0,
+    max: 100_000_000,
+  });
+  const sortRef = useRef(null);
+  useEffect(() => {
+    const numberOfPages = mobileProducts.length / 6;
+    const newArray = [];
+    if (numberOfPages - Math.floor(numberOfPages) !== 0) {
+      for (let i = 0; i < Math.floor(numberOfPages) + 1; i++) {
+        newArray.push(i);
+      }
+      setPaginationBtns(newArray);
+    } else {
+      for (let i = 0; i < numberOfPages; i++) {
+        newArray.push(i);
+      }
+      setPaginationBtns(newArray);
+    }
+  }, [mobileProducts]);
+  useEffect(() => {
+    const total = [];
+    const AllMobileProducts = AllProducts.filter((item) => {
+      return item.categories.includes("Mobile");
+    });
+    const allOptions = Object.values(filter);
+    if (allOptions.includes(true)) {
+      if (filter.core8) {
+        const filteredProducts = AllMobileProducts.filter((item) => {
+          return item.core.indexOf(8) > -1;
+        });
+        filteredProducts.forEach((item) => {
+          total.push(item);
+        });
+      }
+      if (filter.core4) {
+        const filteredProducts = AllMobileProducts.filter((item) => {
+          return item.core.indexOf(4) > -1;
+        });
+        filteredProducts.forEach((item) => {
+          total.push(item);
+        });
+      }
+      if (filter.core2) {
+        const filteredProducts = AllMobileProducts.filter((item) => {
+          return item.core.indexOf(2) > -1;
+        });
+        filteredProducts.forEach((item) => {
+          total.push(item);
+        });
+      }
+      if (filter.ram16) {
+        const filteredProducts = AllMobileProducts.filter((item) => {
+          return item.ram === 16;
+        });
+        filteredProducts.forEach((item) => {
+          total.push(item);
+        });
+      }
+      if (filter.ram8) {
+        const filteredProducts = AllMobileProducts.filter((item) => {
+          return item.ram === 8;
+        });
+        filteredProducts.forEach((item) => {
+          total.push(item);
+        });
+      }
+      if (filter.ram4) {
+        const filteredProducts = AllMobileProducts.filter((item) => {
+          return item.ram === 4;
+        });
+        filteredProducts.forEach((item) => {
+          total.push(item);
+        });
+      }
+      if (filter.camera108) {
+        const filteredProducts = AllMobileProducts.filter((item) => {
+          return item.camera === 108;
+        });
+        filteredProducts.forEach((item) => {
+          total.push(item);
+        });
+      }
+      if (filter.camera60) {
+        const filteredProducts = AllMobileProducts.filter((item) => {
+          return item.camera === 60;
+        });
+        filteredProducts.forEach((item) => {
+          total.push(item);
+        });
+      }
+    } else {
+      AllMobileProducts.forEach((item) => {
+        total.push(item);
+      });
+    }
+    const newSet = new Set(total);
+    const noRepeatArray = Array.from(newSet);
+    const pureArray = noRepeatArray.filter((item) => {
+      return item.priceOn <= priceLimit.max && item.priceOn >= priceLimit.min;
+    });
+
+    if (sortSystem === "latest") {
+      const sortedArray = pureArray.sort((a, b) => {
+        return a.date - b.date;
+      });
+      setMobileProducts(sortedArray);
+    } else if (sortSystem === "alphabet") {
+      const sortedArray = pureArray.sort((a, b) => {
+        return a.model - b.model;
+      });
+      setMobileProducts(sortedArray);
+    } else if (sortSystem === "price") {
+      const sortedArray = pureArray.sort((a, b) => {
+        return a.priceOn - b.priceOn;
+      });
+      setMobileProducts(sortedArray);
+    }
+  }, [filter, sortSystem, priceLimit]);
   return (
     <div className="mobile-page">
       <p className="page-address">خانه / موبایل</p>
       <div className="head-menu">
-        <p className="product-counter">نمایش X محصول از y محصول</p>
+        <p className="product-counter">
+          نمایش {`${(page - 1) * 6 + 1} - ${(page - 1) * 6 + 6}`} محصول از{" "}
+          {mobileProducts.length} محصول
+        </p>
         <FaSortAmountDownAlt />
-        <select className="head-menu-drop-down">
+        <select
+          className="head-menu-drop-down"
+          ref={sortRef}
+          onChange={(event) => {
+            setSortSystem(event.target.value);
+          }}
+        >
           <option value="latest">آخرین محصولات</option>
-          <option value="price">قیمت ها</option>
+          <option value="price">قیمت</option>
           <option value="alphabet">الفبا</option>
-          <option value="offers">تخفیف ها</option>
         </select>
+        <div className="pagination">
+          {paginationBtns.map((btn, index) => {
+            return (
+              <button
+                onClick={() => {
+                  setPage(index + 1);
+                }}
+                className={index + 1 === page ? "active" : ""}
+              >
+                {index + 1}
+              </button>
+            );
+          })}
+        </div>
       </div>
       <div className="mobile-page-product-container">
         <div className="mobile-page__products">
@@ -24,13 +183,114 @@ const MobilePage = () => {
             <div className="filter-by">
               <p>هسته پردازنده </p>
               <div className="input-group">
-                <button id="8core" className="input-group-btn">
+                <button
+                  id="8core"
+                  className={
+                    filter.core8
+                      ? "input-group-btn-active input-group-btn"
+                      : "input-group-btn"
+                  }
+                  onClick={() => {
+                    if (filter.core8) {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                      });
+                    } else {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        core8: true,
+                      });
+                    }
+                  }}
+                >
                   8 هسته ای
                 </button>
-                <button id="4core" className="input-group-btn">
+                <button
+                  id="4core"
+                  className={
+                    filter.core4
+                      ? "input-group-btn-active input-group-btn"
+                      : "input-group-btn"
+                  }
+                  onClick={() => {
+                    if (filter.core4) {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        core4: false,
+                      });
+                    } else {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        core4: true,
+                      });
+                    }
+                  }}
+                >
                   4 هسته ای
                 </button>
-                <button id="2core" className="input-group-btn">
+                <button
+                  id="2core"
+                  className={
+                    filter.core2
+                      ? "input-group-btn-active input-group-btn"
+                      : "input-group-btn"
+                  }
+                  onClick={() => {
+                    if (filter.core2) {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        core2: false,
+                      });
+                    } else {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        core2: true,
+                      });
+                    }
+                  }}
+                >
                   2 هسته ای
                 </button>
               </div>
@@ -38,13 +298,115 @@ const MobilePage = () => {
             <div className="filter-by">
               <p>رم </p>
               <div className="input-group">
-                <button id="16ram" className="input-group-btn">
+                <button
+                  id="16ram"
+                  className={
+                    filter.ram16
+                      ? "input-group-btn-active input-group-btn"
+                      : "input-group-btn"
+                  }
+                  onClick={() => {
+                    if (filter.ram16) {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        ram16: false,
+                      });
+                    } else {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        ram16: true,
+                      });
+                    }
+                  }}
+                >
                   16 GB
                 </button>
-                <button id="8ram" className="input-group-btn">
+                <button
+                  id="8ram"
+                  className={
+                    filter.ram8
+                      ? "input-group-btn-active input-group-btn"
+                      : "input-group-btn"
+                  }
+                  onClick={() => {
+                    if (filter.ram8) {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        ram8: false,
+                      });
+                    } else {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        ram8: true,
+                      });
+                    }
+                  }}
+                >
                   8 GB
                 </button>
-                <button id="4ram" className="input-group-btn">
+                <button
+                  id="4ram"
+                  className={
+                    filter.ram4
+                      ? "input-group-btn-active input-group-btn"
+                      : "input-group-btn"
+                  }
+                  onClick={() => {
+                    if (filter.ram4) {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        ram4: false,
+                      });
+                    } else {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        ram4: true,
+                      });
+                    }
+                  }}
+                >
                   4 GB
                 </button>
               </div>
@@ -52,10 +414,78 @@ const MobilePage = () => {
             <div className="filter-by">
               <p>وضوح دوربین </p>
               <div className="input-group">
-                <button id="108mgpx" className="input-group-btn">
+                <button
+                  id="108mgpx"
+                  className={
+                    filter.camera108
+                      ? "input-group-btn-active input-group-btn"
+                      : "input-group-btn"
+                  }
+                  onClick={() => {
+                    if (filter.camera108) {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        camera108: false,
+                      });
+                    } else {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        camera108: true,
+                      });
+                    }
+                  }}
+                >
                   108 مگاپیکسل
                 </button>
-                <button id="60mgpx" className="input-group-btn">
+                <button
+                  id="60mgpx"
+                  className={
+                    filter.camera60
+                      ? "input-group-btn-active input-group-btn"
+                      : "input-group-btn"
+                  }
+                  onClick={() => {
+                    if (filter.camera60) {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        camera60: false,
+                      });
+                    } else {
+                      setFilter({
+                        core8: false,
+                        core4: false,
+                        core2: false,
+                        ram16: false,
+                        ram8: false,
+                        ram4: false,
+                        camera108: false,
+                        camera60: false,
+                        camera60: true,
+                      });
+                    }
+                  }}
+                >
                   60 مگاپیکسل
                 </button>
               </div>
@@ -69,7 +499,15 @@ const MobilePage = () => {
                   id="price-from"
                   placeholder="از :"
                   min={1_000_000}
-                  max={30_000_000}
+                  max={100_000_000}
+                  onChange={(event) => {
+                    if (event.target.value !== "") {
+                      setPriceLimit({ ...priceLimit, min: event.target.value });
+                    } else {
+                      setPriceLimit({ min: 0, max: 100000000 });
+                    }
+                  }}
+                  step={100000}
                 />
                 <input
                   type="number"
@@ -77,15 +515,25 @@ const MobilePage = () => {
                   id="price-end"
                   placeholder=" تا :"
                   min={1_000_000}
-                  max={30_000_000}
+                  max={100_000_000}
+                  step={100000}
+                  onChange={(event) => {
+                    if (event.target.value !== "") {
+                      setPriceLimit({ ...priceLimit, max: event.target.value });
+                    } else {
+                      setPriceLimit({ min: 0, max: 100000000 });
+                    }
+                  }}
                 />
               </div>
             </div>
           </div>
           <div className="mobile-page__products-show">
-            {AllProducts.slice(0, 6).map((product) => {
-              return <Product />;
-            })}
+            {mobileProducts
+              .slice((page - 1) * 6, (page - 1) * 6 + 6)
+              .map((product) => {
+                return <Product {...product} key={product.id} />;
+              })}
           </div>
         </div>
       </div>

@@ -639,7 +639,7 @@ export const AllProducts = [
     model: "Xiaomi 11T Pro 5G 256/12 GB",
     categories: ["Mobile"],
     priceOn: 16_150_000,
-    priceOff: 0,
+    priceOff: null,
     brand: "xi",
     features: [
       {
@@ -707,7 +707,7 @@ export const AllProducts = [
     model: "Xiaomi Mi 10 5G 8/256 GB",
     categories: ["Mobile"],
     priceOn: "",
-    priceOff: "",
+    priceOff: null,
     brand: "",
     features: [
       {

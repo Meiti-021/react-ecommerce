@@ -1082,6 +1082,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px;
+  height: 70px;
 }
 
 .product__price-on {
@@ -1096,7 +1097,7 @@ main {
 }
 .product__price-offer {
   font-size: 22px;
-  color: rgb(255, 0, 0);
+  color: var(--main-bg-color);
 }
 
 .product__price-offer span {
@@ -1110,26 +1111,28 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #03e803;
+  color: var(--main-accent-color);
   font-size: 20px;
   padding-top: 5px;
+  z-index: 2;
+  position: relative;
 }
 
 .product__footer-link a:link,
 .product__footer-link a:visited,
 .product__footer-link a:focus {
-  color: #03e803;
+  color: var(--main-accent-color);
   text-decoration: none;
 }
 
 .product__off {
-  background-color: #ef262c;
+  background-color: var(--main-bg-color);
   position: absolute;
-  color: #fff;
+  color: var(--main-accent-color);
   padding: 5px;
   border-radius: 12px;
   width: 50px;
-  font-size: 14px;
+  font-size: 9px;
   height: 25px;
   display: flex;
   justify-content: center;
@@ -1176,4 +1179,24 @@ main {
 .product__btns:hover button {
   right: 20px;
   opacity: 1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #a6adb3;
+  background-color: #fff;
+}
+.pagination button.active {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: 2px solid var(--main-bg-color);
 }
