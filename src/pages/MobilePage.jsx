@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Product from "../components/Product";
 import { FaSortAmountDownAlt, TfiMenu } from "../database/icons";
 import { AllProducts } from "../database/productsDatabase";
+import ProductNotFound from "../components/ProductNotFound";
 
 const MobilePage = () => {
   const [mobileProducts, setMobileProducts] = useState(
@@ -550,11 +551,15 @@ const MobilePage = () => {
             </div>
           </div>
           <div className="mobile-page__products-show">
-            {mobileProducts
-              .slice((page - 1) * 6, (page - 1) * 6 + 6)
-              .map((product) => {
-                return <Product {...product} key={product.id} />;
-              })}
+            {mobileProducts.length === 0 ? (
+              <ProductNotFound />
+            ) : (
+              mobileProducts
+                .slice((page - 1) * 6, (page - 1) * 6 + 6)
+                .map((product) => {
+                  return <Product {...product} key={product.id} />;
+                })
+            )}
           </div>
         </div>
       </div>

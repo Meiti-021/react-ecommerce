@@ -461,6 +461,7 @@ main {
   direction: rtl;
   grid-column: span 3;
   flex-direction: column-reverse;
+  grid-row: span 2;
 }
 
 .error-icon {
@@ -974,7 +975,7 @@ main {
   gap: 5px;
   padding: 20px 0px;
   background-color: #fff;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 10px;
   height: 100vh;
   overflow: hidden;
   position: sticky;
@@ -1047,7 +1048,7 @@ main {
 }
 
 .mobile-page__products-show {
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
   background-color: #fff;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
