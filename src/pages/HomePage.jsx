@@ -10,8 +10,8 @@ const HomePage = () => {
     <div className="HomePage">
       <Header />
       {/* <LandingPage /> */}
-      {/* <MobilePage /> */}
-      <ComputerPage />
+      <MobilePage />
+      {/* <ComputerPage /> */}
       <Footer />
     </div>
   );

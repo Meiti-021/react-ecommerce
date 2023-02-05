@@ -3,6 +3,7 @@ import Product from "../components/Product";
 import { FaSortAmountDownAlt, TfiMenu } from "../database/icons";
 import { AllProducts } from "../database/productsDatabase";
 import ProductNotFound from "../components/ProductNotFound";
+import MultiRangeSlider from "multi-range-slider-react";
 
 const MobilePage = () => {
   const [mobileProducts, setMobileProducts] = useState(
@@ -11,6 +12,11 @@ const MobilePage = () => {
     })
   );
   const [page, setPage] = useState(1);
+  const [filterGroupOpen, setFilterGroupOpen] = useState({
+    core: false,
+    ram: false,
+    camera: false,
+  });
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [paginationBtns, setPaginationBtns] = useState([]);
   const [filter, setFilter] = useState({
@@ -142,8 +148,16 @@ const MobilePage = () => {
       });
       setMobileProducts(sortedArray);
     }
-    setPage(1);
   }, [filter, sortSystem, priceLimit]);
+  const priceHandler = (e) => {
+    setPriceLimit({
+      max: e.maxValue,
+      min: e.minValue,
+    });
+  };
+  useEffect(() => {
+    setPage(1);
+  }, [filter, sortSystem]);
   return (
     <div className="mobile-page">
       <p className="page-address">خانه / موبایل</p>
@@ -202,8 +216,25 @@ const MobilePage = () => {
             }
           >
             <p className="filter-title">نمایش محصولات برحسب: </p>
-            <div className="filter-by">
-              <p>هسته پردازنده </p>
+            <div
+              className={
+                filterGroupOpen.core
+                  ? "filter-by filter-by-open"
+                  : "filter-by filter-by-close"
+              }
+            >
+              <p>
+                هسته پردازنده
+                <button
+                  onClick={() => {
+                    filterGroupOpen.core
+                      ? setFilterGroupOpen({ ...filterGroupOpen, core: false })
+                      : setFilterGroupOpen({ ...filterGroupOpen, core: true });
+                  }}
+                >
+                  {filterGroupOpen.core ? "-" : "+"}
+                </button>
+              </p>
               <div className="input-group">
                 <button
                   id="8core"
@@ -317,8 +348,25 @@ const MobilePage = () => {
                 </button>
               </div>
             </div>
-            <div className="filter-by">
-              <p>رم </p>
+            <div
+              className={
+                filterGroupOpen.ram
+                  ? "filter-by filter-by-open"
+                  : " filter-by filter-by-close"
+              }
+            >
+              <p>
+                رم
+                <button
+                  onClick={() => {
+                    filterGroupOpen.ram
+                      ? setFilterGroupOpen({ ...filterGroupOpen, ram: false })
+                      : setFilterGroupOpen({ ...filterGroupOpen, ram: true });
+                  }}
+                >
+                  {filterGroupOpen.ram ? "-" : "+"}
+                </button>
+              </p>
               <div className="input-group">
                 <button
                   id="16ram"
@@ -433,8 +481,31 @@ const MobilePage = () => {
                 </button>
               </div>
             </div>
-            <div className="filter-by">
-              <p>وضوح دوربین </p>
+            <div
+              className={
+                filterGroupOpen.camera
+                  ? "filter-by filter-by-open"
+                  : " filter-by filter-by-close"
+              }
+            >
+              <p>
+                وضوح دوربین
+                <button
+                  onClick={() => {
+                    filterGroupOpen.camera
+                      ? setFilterGroupOpen({
+                          ...filterGroupOpen,
+                          camera: false,
+                        })
+                      : setFilterGroupOpen({
+                          ...filterGroupOpen,
+                          camera: true,
+                        });
+                  }}
+                >
+                  {filterGroupOpen.camera ? "-" : "+"}
+                </button>
+              </p>
               <div className="input-group">
                 <button
                   id="108mgpx"
@@ -515,36 +586,25 @@ const MobilePage = () => {
             <div className="filter-by">
               <p>محدودیت قیمت </p>
               <div className="input-group input-price-group">
-                <input
-                  type="number"
-                  name="price-from"
-                  id="price-from"
-                  placeholder="از :"
-                  min={1_000_000}
-                  max={100_000_000}
-                  onChange={(event) => {
-                    if (event.target.value !== "") {
-                      setPriceLimit({ ...priceLimit, min: event.target.value });
-                    } else {
-                      setPriceLimit({ min: 0, max: 100000000 });
-                    }
+                <MultiRangeSlider
+                  min={0}
+                  max={30000000}
+                  step={500000}
+                  stepOnly={true}
+                  style={{
+                    border: "none",
+                    boxShadow: "none",
+                    width: "100%",
+                    padding: "15px 10px",
+                    direction: "ltr",
                   }}
-                  step={100000}
-                />
-                <input
-                  type="number"
-                  name="price-end"
-                  id="price-end"
-                  placeholder=" تا :"
-                  min={1_000_000}
-                  max={100_000_000}
-                  step={100000}
-                  onChange={(event) => {
-                    if (event.target.value !== "") {
-                      setPriceLimit({ ...priceLimit, max: event.target.value });
-                    } else {
-                      setPriceLimit({ min: 0, max: 100000000 });
-                    }
+                  ruler={false}
+                  barLeftColor={"#fff"}
+                  barRightColor={"#fff"}
+                  barInnerColor={"#041e42"}
+                  label={true}
+                  onInput={(e) => {
+                    priceHandler(e);
                   }}
                 />
               </div>
