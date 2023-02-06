@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import LandingPage from "./LandingPage";
 import LaptopPage from "./LaptopPage";
 import MobilePage from "./MobilePage";
+import TvPage from "./SmartTvPage";
 
 const HomePage = () => {
   return (
@@ -11,7 +12,8 @@ const HomePage = () => {
       <Header />
       {/* <LandingPage /> */}
       {/* <MobilePage /> */}
-      <LaptopPage />
+      {/* <LaptopPage /> */}
+      {/* <TvPage /> */}
       <Footer />
     </div>
   );
