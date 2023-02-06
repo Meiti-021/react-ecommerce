@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import HeadphonesPage from "./HeadPhonePage";
 import LandingPage from "./LandingPage";
 import LaptopPage from "./LaptopPage";
 import MobilePage from "./MobilePage";
@@ -11,9 +12,10 @@ const HomePage = () => {
     <div className="HomePage">
       <Header />
       {/* <LandingPage /> */}
-      {/* <MobilePage /> */}
+      <MobilePage />
       {/* <LaptopPage /> */}
       {/* <TvPage /> */}
+      {/* <HeadphonesPage /> */}
       <Footer />
     </div>
   );
