@@ -22,9 +22,9 @@ import {
   BsTelegram,
   BsInstagram,
   BsTwitter,
+  BsFillCheckCircleFill,
 } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
-
 export {
   BiSupport,
   FaTruck,
@@ -54,4 +54,5 @@ export {
   BsTwitter,
   FaSortAmountDownAlt,
   FaShoppingCart,
+  BsFillCheckCircleFill,
 };

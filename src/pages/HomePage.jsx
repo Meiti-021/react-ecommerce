@@ -5,6 +5,7 @@ import HeadphonesPage from "./HeadPhonePage";
 import LandingPage from "./LandingPage";
 import LaptopPage from "./LaptopPage";
 import MobilePage from "./MobilePage";
+import ProductInfo from "./ProductInfo";
 import TvPage from "./SmartTvPage";
 
 const HomePage = () => {
@@ -12,10 +13,11 @@ const HomePage = () => {
     <div className="HomePage">
       <Header />
       {/* <LandingPage /> */}
-      <MobilePage />
+      {/* <MobilePage /> */}
       {/* <LaptopPage /> */}
       {/* <TvPage /> */}
       {/* <HeadphonesPage /> */}
+      <ProductInfo />
       <Footer />
     </div>
   );
