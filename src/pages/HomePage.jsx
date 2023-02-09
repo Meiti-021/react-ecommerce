@@ -6,7 +6,7 @@ import LandingPage from "./LandingPage";
 import LaptopPage from "./LaptopPage";
 import MobilePage from "./MobilePage";
 import ProductInfo from "./ProductInfo";
-import ShopCard from "./ShopCard";
+import ShopCart from "./ShopCart";
 import TvPage from "./SmartTvPage";
 
 const HomePage = () => {
@@ -19,7 +19,7 @@ const HomePage = () => {
       {/* <TvPage /> */}
       {/* <HeadphonesPage /> */}
       {/* <ProductInfo /> */}
-      <ShopCard />
+      <ShopCart />
       <Footer />
     </div>
   );

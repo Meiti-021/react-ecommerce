@@ -40,17 +40,17 @@ const ProductInfo = () => {
             </div>
           </div>
 
-          <div className="product-info__buy-card">
+          <div className="product-info__buy-cart">
             <div className="counter">
               <button>+</button>1<button>-</button>
             </div>
-            <button className="add-to-card">
+            <button className="add-to-cart">
               افزودن به سبد
-              <FiShoppingCart className="add-to-card-icon" />
+              <FiShoppingCart className="add-to-cart-icon" />
             </button>
             <button className="add-to-wish-list">
               افزودن به علاقه مندی ها
-              <RiHeart3Line className="add-to-card-icon" />
+              <RiHeart3Line className="add-to-cart-icon" />
             </button>
           </div>
           <p className="product-info__categories"> دسته : موبایل ها</p>

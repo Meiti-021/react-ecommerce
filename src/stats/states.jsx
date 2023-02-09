@@ -1,8 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import BestProductsSlice from "./features/BestSellersSlice";
-
+import ShopCartSlice from "./features/ShopCartSlice";
 export const store = configureStore({
   reducer: {
-    bests: BestProductsSlice,
+    cart: ShopCartSlice.reducer,
   },
 });

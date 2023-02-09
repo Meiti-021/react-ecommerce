@@ -1,8 +1,8 @@
 import React from "react";
 
-const ShopCardItem = () => {
+const ShopCartItem = () => {
   return (
-    <div className="shop-card-item">
+    <div className="shop-cart-item">
       <div className="info">
         <figure>
           <img src="./assets/products/d65995.jpg" alt="" />
@@ -21,4 +21,4 @@ const ShopCardItem = () => {
   );
 };
 
-export default ShopCardItem;
+export default ShopCartItem;
