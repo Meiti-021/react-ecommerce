@@ -6,6 +6,7 @@ import LandingPage from "./LandingPage";
 import LaptopPage from "./LaptopPage";
 import MobilePage from "./MobilePage";
 import ProductInfo from "./ProductInfo";
+import ShopCard from "./ShopCard";
 import TvPage from "./SmartTvPage";
 
 const HomePage = () => {
@@ -17,7 +18,8 @@ const HomePage = () => {
       {/* <LaptopPage /> */}
       {/* <TvPage /> */}
       {/* <HeadphonesPage /> */}
-      <ProductInfo />
+      {/* <ProductInfo /> */}
+      <ShopCard />
       <Footer />
     </div>
   );
