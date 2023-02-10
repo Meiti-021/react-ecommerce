@@ -1,5 +1,5 @@
 import React from "react";
-import { FaShoppingCart, RiHeart3Line, BiSupport } from "../database/icons";
+import { FiShoppingCart, RiHeart3Line, BiSupport } from "../database/icons";
 
 const Product = ({ name, id, priceOff, priceOn, exist }) => {
   return (
@@ -32,7 +32,7 @@ const Product = ({ name, id, priceOff, priceOn, exist }) => {
         </div>
         <div className="product__footer-link">
           <a href="#">
-            <FaShoppingCart />
+            <FiShoppingCart />
           </a>
         </div>
       </div>

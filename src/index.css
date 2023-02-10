@@ -254,6 +254,7 @@ header {
   top: 8px;
   right: -3px;
   color: var(--main-bg-color);
+  font-weight: bold;
 }
 
 .nav__user {
@@ -466,11 +467,12 @@ main {
   align-items: center;
   flex-direction: column;
   direction: rtl;
-  grid-column: span 100;
+  grid-column: span 10;
   flex-direction: column-reverse;
-  grid-row: span 100;
+  grid-row: span 10;
   background-color: #fff;
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 .error-icon {
@@ -849,6 +851,8 @@ main {
 
 .footer {
   padding: 50px 50px 30px 50px;
+  border-top: 1px solid #dcdddf;
+  background-color: var(--main-bg-color);
 }
 
 .footer__site-map {
@@ -869,6 +873,7 @@ main {
   margin-bottom: 5px;
   font-weight: normal;
   font-size: 15px;
+  color: #fff;
 }
 
 .site-map-list a {
@@ -912,7 +917,7 @@ main {
   list-style: none;
   font-size: 30px;
   gap: 15px;
-  color: var(--secondry-text-color);
+  color: var(--main-accent-color);
 }
 
 .footer__copy-right {
@@ -920,7 +925,7 @@ main {
   text-align: center;
   padding-top: 30px;
   font-size: 13px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--main-accent-color);
 }
 
 .page-address {
@@ -965,7 +970,7 @@ main {
 .headphone-page-product-container {
   width: 100vw;
   height: auto;
-  background-color: var(--main-bg-color);
+  background-color: var(--main-accent-color);
   padding: 20px;
 }
 
@@ -1092,7 +1097,7 @@ main {
 .tv-page__products-show,
 .headphone-page__products-show {
   border-radius: 10px;
-  background-color: var(--main-bg-color);
+  background-color: transparent;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -1193,7 +1198,7 @@ main {
   align-items: center;
   left: 20px;
   top: 20px;
-  padding-top: 7px;
+  font-weight: bold;
 }
 
 .product__btns {
@@ -1518,6 +1523,16 @@ main {
   width: 100%;
   direction: rtl;
   border-radius: 5px;
+  position: relative;
+}
+.shop-cart-item .remove-item {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: red;
 }
 
 .shop-cart-item figure {
@@ -1542,6 +1557,7 @@ main {
 .shop-cart-item .info .content .price {
   font-size: 15px;
 }
+
 .shop-cart-item figure img {
   width: 100%;
   height: 100%;
@@ -1565,6 +1581,13 @@ main {
   background-color: transparent;
   border: none;
   font-size: 25px;
+}
+.shop-cart-item .counter-section p {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2px;
 }
 
 .shop-cart-total-price {

@@ -1,12 +1,17 @@
 import React from "react";
-import { FiShoppingCart } from "../database/icons";
-const UserNav = ({ notification, icon }) => {
+import { useSelector } from "react-redux";
+const UserNav = ({ id, icon }) => {
+  const { wishList, productList } = useSelector((state) => state.cart);
   return (
     <div className="user-nav">
       <div className="user-nav__icon">
         {icon}
-        {notification && (
-          <span className="user-nav__counter">{notification}</span>
+        {id === "nav-wish-list" && wishList.length ? (
+          <span className="user-nav__counter">{wishList.length}</span>
+        ) : id === "nav-cart" && productList.length ? (
+          <span className="user-nav__counter">{productList.length}</span>
+        ) : (
+          void 0
         )}
       </div>
     </div>

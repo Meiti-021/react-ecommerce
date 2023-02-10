@@ -1,21 +1,40 @@
 import React from "react";
-
-const ShopCartItem = () => {
+import { useDispatch } from "react-redux";
+import {
+  IoCloseCircle,
+  BsFillCaretDownFill,
+  BsFillCaretUpFill,
+} from "../database/icons";
+import { addAmount } from "../stats/features/ShopCartSlice";
+const ShopCartItem = ({ name, id, priceOn, amount }) => {
+  const disPatch = useDispatch();
   return (
     <div className="shop-cart-item">
+      <button className="remove-item">
+        <IoCloseCircle />
+      </button>
       <div className="info">
         <figure>
-          <img src="./assets/products/d65995.jpg" alt="" />
+          <img src={`./assets/products/${id}`} alt="" />
         </figure>
         <div className="content">
-          <p className="name">هدفون شیائومی مدل ۱More Design Piston Fit</p>
-          <p className="price">280000ت</p>
+          <p className="name">{name} </p>
+          <p className="price">{priceOn}ت</p>
         </div>
       </div>
       <div className="counter-section">
-        <button className="shop-item-counter">-</button>
-        <p>2</p>
-        <button className="shop-item-counter">-</button>
+        <button
+          className="shop-item-counter"
+          onClick={() => {
+            disPatch(addAmount(id));
+          }}
+        >
+          <BsFillCaretUpFill />
+        </button>
+        <p>{amount}</p>
+        <button className="shop-item-counter">
+          <BsFillCaretDownFill />
+        </button>
       </div>
     </div>
   );

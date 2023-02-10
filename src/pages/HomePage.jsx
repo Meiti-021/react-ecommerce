@@ -14,12 +14,12 @@ const HomePage = () => {
     <div className="HomePage">
       <Header />
       {/* <LandingPage /> */}
-      {/* <MobilePage /> */}
+      <MobilePage />
       {/* <LaptopPage /> */}
       {/* <TvPage /> */}
       {/* <HeadphonesPage /> */}
       {/* <ProductInfo /> */}
-      <ShopCart />
+      {/* <ShopCart /> */}
       <Footer />
     </div>
   );

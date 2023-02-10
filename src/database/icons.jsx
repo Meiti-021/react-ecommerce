@@ -15,7 +15,12 @@ import {
   SiApple,
 } from "react-icons/si";
 
-import { IoStarSharp, IoStarOutline, IoStarHalfOutline } from "react-icons/io5";
+import {
+  IoStarSharp,
+  IoStarOutline,
+  IoStarHalfOutline,
+  IoCloseCircle,
+} from "react-icons/io5";
 import {
   BsGithub,
   BsFacebook,
@@ -23,8 +28,9 @@ import {
   BsInstagram,
   BsTwitter,
   BsFillCheckCircleFill,
+  BsFillCaretDownFill,
+  BsFillCaretUpFill,
 } from "react-icons/bs";
-import { FaShoppingCart } from "react-icons/fa";
 export {
   BiSupport,
   FaTruck,
@@ -53,6 +59,8 @@ export {
   BsInstagram,
   BsTwitter,
   FaSortAmountDownAlt,
-  FaShoppingCart,
   BsFillCheckCircleFill,
+  IoCloseCircle,
+  BsFillCaretDownFill,
+  BsFillCaretUpFill,
 };

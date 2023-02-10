@@ -589,6 +589,8 @@ const MobilePage = () => {
                 <MultiRangeSlider
                   min={0}
                   max={30000000}
+                  minValue={priceLimit.min}
+                  maxValue={priceLimit.max}
                   step={500000}
                   stepOnly={true}
                   style={{

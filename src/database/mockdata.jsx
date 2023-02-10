@@ -100,15 +100,15 @@ const shopInfo = [
 
 const userNavInfo = [
   {
-    notification: "",
+    id: "nav-profile",
     icon: <CgProfile />,
   },
   {
-    notification: 2,
+    id: "nav-wish-list",
     icon: <RiHeart3Line />,
   },
   {
-    notification: 5,
+    id: "nav-cart",
     icon: <FiShoppingCart />,
   },
 ];
