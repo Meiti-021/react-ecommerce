@@ -591,7 +591,7 @@ const MobilePage = () => {
                   max={30000000}
                   minValue={priceLimit.min}
                   maxValue={priceLimit.max}
-                  step={500000}
+                  step={1000000}
                   stepOnly={true}
                   style={{
                     border: "none",

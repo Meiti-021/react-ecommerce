@@ -41,28 +41,24 @@ const headerOption = [
 
 const navList = [
   {
-    address: "",
+    address: "/",
     content: "خانه",
   },
   {
-    address: "",
+    address: "mobiles",
     content: "موبایل",
   },
   {
-    address: "",
+    address: "tvs",
     content: "تلوزیون",
   },
   {
-    address: "",
-    content: "لوازم برقی",
+    address: "headphones",
+    content: "هدفون",
   },
   {
-    address: "",
+    address: "laptops",
     content: "کامپیوتر",
-  },
-  {
-    address: "",
-    content: "تخفیف ها",
   },
   {
     address: "",

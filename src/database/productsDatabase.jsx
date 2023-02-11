@@ -624,12 +624,6 @@ export const AllProducts = [
     brand: "xi",
     features: [
       {
-        content: "",
-        title: "",
-      },
-    ],
-    features: [
-      {
         content: " دو سیم کارت",
         title: " تعداد سیم کارت",
       },
@@ -640,6 +634,22 @@ export const AllProducts = [
       {
         content: "2020",
         title: " سال تولید",
+      },
+      {
+        content: "2 GB",
+        title: "رم",
+      },
+      {
+        content: "13MP",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: " 8GB , 4GB",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "32",
+        title: "حافظه",
       },
     ],
     sells: 14,
@@ -676,6 +686,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2021",
       },
+      {
+        content: "12GB",
+        title: "رم",
+      },
+      {
+        content: "108MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8GB",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "256GB",
+        title: "حافظه",
+      },
     ],
     sells: 0,
     date: 14,
@@ -710,6 +736,22 @@ export const AllProducts = [
       {
         title: "سال تولید",
         content: "2022",
+      },
+      {
+        content: "8GB",
+        title: "رم",
+      },
+      {
+        content: "108MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8GB, 4GB",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "256GB",
+        title: "حافظه",
       },
     ],
     sells: 0,
@@ -746,6 +788,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2023",
       },
+      {
+        content: "16GB",
+        title: "رم",
+      },
+      {
+        content: "136MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8GB, 4GB",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "256GB",
+        title: "حافظه",
+      },
     ],
     sells: 632,
     date: 14,
@@ -780,6 +838,22 @@ export const AllProducts = [
       {
         title: "سال تولید",
         content: "2019",
+      },
+      {
+        content: "4GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "4GB",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "128GB",
+        title: "حافظه",
       },
     ],
     sells: 50,
@@ -816,6 +890,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2021",
       },
+      {
+        content: "8GB",
+        title: "رم",
+      },
+      {
+        content: "108GB",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8GB, 4GB",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "128GB",
+        title: "حافظه",
+      },
     ],
     sells: 0,
     date: 13,
@@ -850,6 +940,22 @@ export const AllProducts = [
       {
         title: "سال تولید",
         content: "2022",
+      },
+      {
+        content: "8GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "4GB",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "128GB, 256GB",
+        title: "حافظه",
       },
     ],
     sells: 122,
@@ -886,6 +992,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2023",
       },
+      {
+        content: "16GB",
+        title: "رم",
+      },
+      {
+        content: "108GB",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "16 , 8",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "256GB",
+        title: "حافظه",
+      },
     ],
     sells: 506,
     date: 1,
@@ -920,6 +1042,22 @@ export const AllProducts = [
       {
         title: "سال تولید",
         content: "2021",
+      },
+      {
+        content: "8GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8,16",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "126GB",
+        title: "حافظه",
       },
     ],
     sells: 700,
@@ -956,6 +1094,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2020",
       },
+      {
+        content: "4GB",
+        title: "رم",
+      },
+      {
+        content: "126MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "4",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "126GB",
+        title: "حافظه",
+      },
     ],
     sells: 100,
     date: 218,
@@ -990,6 +1144,22 @@ export const AllProducts = [
       {
         title: "سال تولید",
         content: "2022",
+      },
+      {
+        content: "6GB",
+        title: "رم",
+      },
+      {
+        content: "108MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "256GB",
+        title: "حافظه",
       },
     ],
     sells: 213,
@@ -1026,6 +1196,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2021",
       },
+      {
+        content: "4GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8,4",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "126GB",
+        title: "حافظه",
+      },
     ],
     sells: 950,
     date: 126,
@@ -1060,6 +1246,22 @@ export const AllProducts = [
       {
         title: "سال تولید",
         content: "2020",
+      },
+      {
+        content: "4GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "4",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "126GB",
+        title: "حافظه",
       },
     ],
     sells: 136,
@@ -1096,6 +1298,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2020",
       },
+      {
+        content: "8GB",
+        title: "رم",
+      },
+      {
+        content: "108MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8,4,2",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "128GB, 256GB",
+        title: "حافظه",
+      },
     ],
     sells: 236,
     date: 3,
@@ -1130,6 +1348,22 @@ export const AllProducts = [
       {
         title: "سال تولید",
         content: "2020",
+      },
+      {
+        content: "4GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "4,2",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "128GB,64GB",
+        title: "حافظه",
       },
     ],
     sells: 726,
@@ -1166,6 +1400,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2019",
       },
+      {
+        content: "4GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8,4,2",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "128GB,64GB",
+        title: "حافظه",
+      },
     ],
     sells: 459,
     date: 129,
@@ -1200,6 +1450,22 @@ export const AllProducts = [
       {
         title: "سال تولید",
         content: "2019",
+      },
+      {
+        content: "4GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "4,2",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "128GB, 64GB, 32GB",
+        title: "حافظه",
       },
     ],
     sells: 794,
@@ -1236,6 +1502,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2020",
       },
+      {
+        content: "4GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "4,2",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "64GB",
+        title: "حافظه",
+      },
     ],
     sells: 4,
     date: 95,
@@ -1271,6 +1553,22 @@ export const AllProducts = [
         title: "سال تولید",
         content: "2020",
       },
+      {
+        content: "8GB",
+        title: "رم",
+      },
+      {
+        content: "108GB",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8,4,2",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "256GB, 128GB, 64GB",
+        title: "حافظه",
+      },
     ],
     sells: 550,
     date: 93,
@@ -1305,6 +1603,22 @@ export const AllProducts = [
       {
         title: "سال تولید",
         content: "2020",
+      },
+      {
+        content: "4GB",
+        title: "رم",
+      },
+      {
+        content: "60MPX",
+        title: "کیفیت دوربین",
+      },
+      {
+        content: "8,4,2",
+        title: "هسته پردازنده",
+      },
+      {
+        content: "128GB, 64GB, 32GB",
+        title: "حافظه",
       },
     ],
     sells: 0,

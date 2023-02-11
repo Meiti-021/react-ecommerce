@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FiShoppingCart, RiHeart3Line, BiSupport } from "../database/icons";
+import { Link } from "react-router-dom";
 
 const Product = ({ name, id, priceOff, priceOn, exist }) => {
   return (
@@ -31,9 +32,9 @@ const Product = ({ name, id, priceOff, priceOn, exist }) => {
           </p>
         </div>
         <div className="product__footer-link">
-          <a href="#">
+          <Link to={`/products/${id.split(".")[0]}`}>
             <FiShoppingCart />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ const StarRating = ({ rate }) => {
       result.push("empty");
     }
     setStar(result);
-  }, []);
+  }, [rate]);
   return (
     <div className="star-rating">
       {star.map((item) => {
