@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
   IoCloseCircle,
   BsFillCaretDownFill,
   BsFillCaretUpFill,
 } from "../database/icons";
-import { addAmount } from "../stats/features/ShopCartSlice";
+import { AllProducts } from "../database/productsDatabase";
+import { addAmount, updateData } from "../stats/features/ShopCartSlice";
 const ShopCartItem = ({ name, id, priceOn, amount }) => {
   const disPatch = useDispatch();
+  const [product, setProduct] = useState(AllProducts[0]);
+  useEffect(() => {
+    const mainProduct = AllProducts.find((item) => {
+      const oldid = item.id.split(".")[0];
+      return oldid === id;
+    });
+    setProduct(mainProduct);
+  }, []);
   return (
     <div className="shop-cart-item">
       <button className="remove-item">
@@ -26,7 +35,15 @@ const ShopCartItem = ({ name, id, priceOn, amount }) => {
         <button
           className="shop-item-counter"
           onClick={() => {
-            disPatch(addAmount(id));
+            let productAmount = product.amount;
+            if (productAmount >= 0) {
+              productAmount++;
+              const mainProductData = AllProducts.findIndex((item) => {
+                return item.id === product.id;
+              });
+              AllProducts[mainProductData].amount = productAmount;
+              setProduct({ ...product, amount: productAmount });
+            }
           }}
         >
           <BsFillCaretUpFill />

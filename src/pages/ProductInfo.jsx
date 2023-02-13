@@ -12,7 +12,11 @@ import {
   RiHeart3Line,
 } from "../database/icons";
 import { AllProducts } from "../database/productsDatabase";
+import { addToWishList, addProduct } from "../stats/features/ShopCartSlice";
+import { useDispatch, useSelector } from "react-redux";
 const ProductInfo = () => {
+  const { wishList, productList } = useSelector((state) => state.cart);
+  const disPatch = useDispatch();
   const ProductId = useParams();
   const [product, setProduct] = useState(AllProducts[0]);
   const [rate, setRate] = useState(0);
@@ -50,7 +54,7 @@ const ProductInfo = () => {
           <ul>
             {product.features.map((item) => {
               return (
-                <li>
+                <li key={`${Math.random() * 10000000}`}>
                   {item.title} : {item.content}
                 </li>
               );
@@ -81,15 +85,49 @@ const ProductInfo = () => {
 
           <div className="product-info__buy-cart">
             <div className="counter">
-              <button>+</button>
+              <button
+                onClick={() => {
+                  let productAmount = product.amount;
+                  if (productAmount >= 0) {
+                    productAmount++;
+                    const mainProductData = AllProducts.findIndex((item) => {
+                      return item.id === product.id;
+                    });
+                    AllProducts[mainProductData].amount = productAmount;
+                    setProduct({ ...product, amount: productAmount });
+                  }
+                }}
+              >
+                +
+              </button>
               {product.amount}
-              <button>-</button>
+              <button
+                onClick={() => {
+                  let productAmount = product.amount;
+                  if (productAmount > 0) {
+                    productAmount--;
+                    setProduct({ ...product, amount: productAmount });
+                  }
+                }}
+              >
+                -
+              </button>
             </div>
-            <button className="add-to-cart">
+            <button
+              className="add-to-cart"
+              onClick={() => {
+                disPatch(addProduct(product));
+              }}
+            >
               افزودن به سبد
               <FiShoppingCart className="add-to-cart-icon" />
             </button>
-            <button className="add-to-wish-list">
+            <button
+              className="add-to-wish-list"
+              onClick={() => {
+                disPatch(addToWishList(product.id));
+              }}
+            >
               افزودن به علاقه مندی ها
               <RiHeart3Line className="add-to-cart-icon" />
             </button>

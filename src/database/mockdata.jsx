@@ -98,14 +98,17 @@ const userNavInfo = [
   {
     id: "nav-profile",
     icon: <CgProfile />,
+    address: "/account-info",
   },
   {
     id: "nav-wish-list",
     icon: <RiHeart3Line />,
+    address: "/wish-list",
   },
   {
     id: "nav-cart",
     icon: <FiShoppingCart />,
+    address: "/cart",
   },
 ];
 

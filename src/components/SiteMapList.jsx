@@ -6,7 +6,7 @@ const SiteMapList = ({ title, options }) => {
       <h4> {title}</h4>
       {options.map((item) => {
         return (
-          <li>
+          <li key={item.content}>
             <a href={item.address}>{item.content}</a>
           </li>
         );

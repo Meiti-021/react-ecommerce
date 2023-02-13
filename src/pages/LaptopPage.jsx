@@ -150,10 +150,12 @@ const LaptopPage = () => {
     }
   }, [filter, sortSystem, priceLimit]);
   const priceHandler = (e) => {
-    setPriceLimit({
-      max: e.maxValue,
-      min: e.minValue,
-    });
+    if (e.maxValue !== priceLimit.max || e.minValue !== priceLimit.min) {
+      setPriceLimit({
+        max: e.maxValue,
+        min: e.minValue,
+      });
+    }
   };
   useEffect(() => {
     setPage(1);
@@ -257,7 +259,6 @@ const LaptopPage = () => {
                       });
                     } else {
                       setFilter({
-                        core8: false,
                         core4: false,
                         core2: false,
                         ram16: false,
@@ -283,7 +284,6 @@ const LaptopPage = () => {
                     if (filter.core4) {
                       setFilter({
                         core8: false,
-                        core4: false,
                         core2: false,
                         ram16: false,
                         ram8: false,
@@ -295,7 +295,6 @@ const LaptopPage = () => {
                     } else {
                       setFilter({
                         core8: false,
-                        core4: false,
                         core2: false,
                         ram16: false,
                         ram8: false,
@@ -321,7 +320,6 @@ const LaptopPage = () => {
                       setFilter({
                         core8: false,
                         core4: false,
-                        core2: false,
                         ram16: false,
                         ram8: false,
                         ram4: false,
@@ -333,7 +331,6 @@ const LaptopPage = () => {
                       setFilter({
                         core8: false,
                         core4: false,
-                        core2: false,
                         ram16: false,
                         ram8: false,
                         ram4: false,
@@ -381,7 +378,6 @@ const LaptopPage = () => {
                         core8: false,
                         core4: false,
                         core2: false,
-                        ram16: false,
                         ram8: false,
                         ram4: false,
                         ColorSilver: false,
@@ -393,7 +389,6 @@ const LaptopPage = () => {
                         core8: false,
                         core4: false,
                         core2: false,
-                        ram16: false,
                         ram8: false,
                         ram4: false,
                         ColorSilver: false,
@@ -419,7 +414,6 @@ const LaptopPage = () => {
                         core4: false,
                         core2: false,
                         ram16: false,
-                        ram8: false,
                         ram4: false,
                         ColorSilver: false,
                         ColorMetal: false,
@@ -431,7 +425,6 @@ const LaptopPage = () => {
                         core4: false,
                         core2: false,
                         ram16: false,
-                        ram8: false,
                         ram4: false,
                         ColorSilver: false,
                         ColorMetal: false,
@@ -457,7 +450,6 @@ const LaptopPage = () => {
                         core2: false,
                         ram16: false,
                         ram8: false,
-                        ram4: false,
                         ColorSilver: false,
                         ColorMetal: false,
                         ram4: false,
@@ -469,7 +461,6 @@ const LaptopPage = () => {
                         core2: false,
                         ram16: false,
                         ram8: false,
-                        ram4: false,
                         ColorSilver: false,
                         ColorMetal: false,
                         ram4: true,
@@ -523,7 +514,6 @@ const LaptopPage = () => {
                         ram16: false,
                         ram8: false,
                         ram4: false,
-                        ColorSilver: false,
                         ColorMetal: false,
                         ColorSilver: false,
                       });
@@ -535,7 +525,6 @@ const LaptopPage = () => {
                         ram16: false,
                         ram8: false,
                         ram4: false,
-                        ColorSilver: false,
                         ColorMetal: false,
                         ColorSilver: true,
                       });
@@ -562,7 +551,6 @@ const LaptopPage = () => {
                         ram4: false,
                         ColorSilver: false,
                         ColorMetal: false,
-                        ColorMetal: false,
                       });
                     } else {
                       setFilter({
@@ -573,7 +561,6 @@ const LaptopPage = () => {
                         ram8: false,
                         ram4: false,
                         ColorSilver: false,
-                        ColorMetal: false,
                         ColorMetal: true,
                       });
                     }

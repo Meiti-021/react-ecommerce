@@ -15,7 +15,12 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__site-map">
         {sitemapData.map((list) => {
-          return <SiteMapList {...list} />;
+          return (
+            <SiteMapList
+              {...list}
+              key={`${Math.random() * 1000000000000000000}`}
+            />
+          );
         })}
       </div>
       <div className="footer__contact">

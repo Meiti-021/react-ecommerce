@@ -150,10 +150,12 @@ const TvPage = () => {
     }
   }, [filter, sortSystem, priceLimit]);
   const priceHandler = (e) => {
-    setPriceLimit({
-      max: e.maxValue,
-      min: e.minValue,
-    });
+    if (e.maxValue !== priceLimit.max || e.minValue !== priceLimit.min) {
+      setPriceLimit({
+        max: e.maxValue,
+        min: e.minValue,
+      });
+    }
   };
   useEffect(() => {
     setPage(1);
@@ -263,7 +265,6 @@ const TvPage = () => {
                       });
                     } else {
                       setFilter({
-                        screen70: false,
                         screen85: false,
                         screen30: false,
                         cashback: false,
@@ -289,7 +290,6 @@ const TvPage = () => {
                     if (filter.screen85) {
                       setFilter({
                         screen70: false,
-                        screen85: false,
                         screen30: false,
                         cashback: false,
                         qled: false,
@@ -301,7 +301,6 @@ const TvPage = () => {
                     } else {
                       setFilter({
                         screen70: false,
-                        screen85: false,
                         screen30: false,
                         cashback: false,
                         qled: false,
@@ -327,7 +326,6 @@ const TvPage = () => {
                       setFilter({
                         screen70: false,
                         screen85: false,
-                        screen30: false,
                         cashback: false,
                         qled: false,
                         soundpromo: false,
@@ -339,7 +337,6 @@ const TvPage = () => {
                       setFilter({
                         screen70: false,
                         screen85: false,
-                        screen30: false,
                         cashback: false,
                         qled: false,
                         soundpromo: false,
@@ -393,7 +390,6 @@ const TvPage = () => {
                         screen70: false,
                         screen85: false,
                         screen30: false,
-                        cashback: false,
                         qled: false,
                         soundpromo: false,
                         resolution4k: false,
@@ -405,7 +401,6 @@ const TvPage = () => {
                         screen70: false,
                         screen85: false,
                         screen30: false,
-                        cashback: false,
                         qled: false,
                         soundpromo: false,
                         resolution4k: false,
@@ -431,7 +426,6 @@ const TvPage = () => {
                         screen85: false,
                         screen30: false,
                         cashback: false,
-                        qled: false,
                         soundpromo: false,
                         resolution4k: false,
                         resolutionhd: false,
@@ -443,7 +437,6 @@ const TvPage = () => {
                         screen85: false,
                         screen30: false,
                         cashback: false,
-                        qled: false,
                         soundpromo: false,
                         resolution4k: false,
                         resolutionhd: false,
@@ -469,7 +462,6 @@ const TvPage = () => {
                         screen30: false,
                         cashback: false,
                         qled: false,
-                        soundpromo: false,
                         resolution4k: false,
                         resolutionhd: false,
                         soundpromo: false,
@@ -481,7 +473,6 @@ const TvPage = () => {
                         screen30: false,
                         cashback: false,
                         qled: false,
-                        soundpromo: false,
                         resolution4k: false,
                         resolutionhd: false,
                         soundpromo: true,
@@ -535,7 +526,6 @@ const TvPage = () => {
                         cashback: false,
                         qled: false,
                         soundpromo: false,
-                        resolution4k: false,
                         resolutionhd: false,
                         resolution4k: false,
                       });
@@ -547,9 +537,8 @@ const TvPage = () => {
                         cashback: false,
                         qled: false,
                         soundpromo: false,
-                        resolution4k: false,
                         resolutionhd: false,
-                        resolutionhd: true,
+                        resolution4k: true,
                       });
                     }
                   }}
@@ -574,7 +563,6 @@ const TvPage = () => {
                         soundpromo: false,
                         resolution4k: false,
                         resolutionhd: false,
-                        resolutionhd: false,
                       });
                     } else {
                       setFilter({
@@ -585,8 +573,7 @@ const TvPage = () => {
                         qled: false,
                         soundpromo: false,
                         resolution4k: false,
-                        resolution4k: true,
-                        resolutionhd: false,
+                        resolutionhd: true,
                       });
                     }
                   }}

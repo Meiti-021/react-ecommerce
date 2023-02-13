@@ -122,10 +122,12 @@ const HeadphonesPage = () => {
     }
   }, [filter, sortSystem, priceLimit]);
   const priceHandler = (e) => {
-    setPriceLimit({
-      max: e.maxValue,
-      min: e.minValue,
-    });
+    if (e.maxValue !== priceLimit.max || e.minValue !== priceLimit.min) {
+      setPriceLimit({
+        max: e.maxValue,
+        min: e.minValue,
+      });
+    }
   };
   useEffect(() => {
     setPage(1);
@@ -226,7 +228,6 @@ const HeadphonesPage = () => {
                       });
                     } else {
                       setFilter({
-                        colorB: false,
                         colorW: false,
                         colory: false,
                         wireless: false,
@@ -249,7 +250,6 @@ const HeadphonesPage = () => {
                     if (filter.colorW) {
                       setFilter({
                         colorB: false,
-                        colorW: false,
                         colory: false,
                         wireless: false,
                         wiry: false,
@@ -261,7 +261,6 @@ const HeadphonesPage = () => {
                     } else {
                       setFilter({
                         colorB: false,
-                        colorW: false,
                         colory: false,
                         wireless: false,
                         wiry: false,
@@ -284,7 +283,6 @@ const HeadphonesPage = () => {
                       setFilter({
                         colorB: false,
                         colorW: false,
-                        colory: false,
                         wireless: false,
                         wiry: false,
                         colory: false,
@@ -293,7 +291,6 @@ const HeadphonesPage = () => {
                       setFilter({
                         colorB: false,
                         colorW: false,
-                        colory: false,
                         wireless: false,
                         wiry: false,
                         colory: true,
@@ -338,7 +335,6 @@ const HeadphonesPage = () => {
                         colorB: false,
                         colorW: false,
                         colory: false,
-                        wireless: false,
                         wiry: false,
                         wireless: false,
                       });
@@ -347,7 +343,6 @@ const HeadphonesPage = () => {
                         colorB: false,
                         colorW: false,
                         colory: false,
-                        wireless: false,
                         wiry: false,
                         wireless: true,
                       });
@@ -371,7 +366,6 @@ const HeadphonesPage = () => {
                         colory: false,
                         wireless: false,
                         wiry: false,
-                        wiry: false,
                       });
                     } else {
                       setFilter({
@@ -379,7 +373,6 @@ const HeadphonesPage = () => {
                         colorW: false,
                         colory: false,
                         wireless: false,
-                        wiry: false,
                         wire4: false,
                         camera108: false,
                         camera60: false,

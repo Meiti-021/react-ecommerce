@@ -259,6 +259,10 @@ header {
   color: var(--main-bg-color);
   font-weight: bold;
 }
+.user-nav-link {
+  text-decoration: none;
+  color: #fff;
+}
 
 .nav__user {
   width: 20%;
@@ -1342,7 +1346,7 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 35px;
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .product-info__intro {

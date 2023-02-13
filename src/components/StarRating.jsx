@@ -27,11 +27,13 @@ const StarRating = ({ rate }) => {
     <div className="star-rating">
       {star.map((item) => {
         if (item === "full") {
-          return <IoStarSharp />;
+          return <IoStarSharp key={`${Math.random() * 100000000000000}`} />;
         } else if (item === "half") {
-          return <IoStarHalfOutline />;
+          return (
+            <IoStarHalfOutline key={`${Math.random() * 100000000000000}`} />
+          );
         } else if (item === "empty") {
-          return <IoStarOutline />;
+          return <IoStarOutline key={`${Math.random() * 100000000000000}`} />;
         }
       })}
     </div>

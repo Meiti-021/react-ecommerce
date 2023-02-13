@@ -1,19 +1,22 @@
 import React from "react";
 import { useSelector } from "react-redux";
-const UserNav = ({ id, icon }) => {
+import { Link } from "react-router-dom";
+const UserNav = ({ id, icon, address }) => {
   const { wishList, productList } = useSelector((state) => state.cart);
   return (
     <div className="user-nav">
-      <div className="user-nav__icon">
-        {icon}
-        {id === "nav-wish-list" && wishList.length ? (
-          <span className="user-nav__counter">{wishList.length}</span>
-        ) : id === "nav-cart" && productList.length ? (
-          <span className="user-nav__counter">{productList.length}</span>
-        ) : (
-          void 0
-        )}
-      </div>
+      <Link className="user-nav-link" to={address}>
+        <div className="user-nav__icon">
+          {icon}
+          {id === "nav-wish-list" && wishList.length ? (
+            <span className="user-nav__counter">{wishList.length}</span>
+          ) : id === "nav-cart" && productList.length ? (
+            <span className="user-nav__counter">{productList.length}</span>
+          ) : (
+            void 0
+          )}
+        </div>
+      </Link>
     </div>
   );
 };

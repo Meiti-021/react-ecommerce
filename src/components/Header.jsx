@@ -24,7 +24,7 @@ const Header = () => {
         </div>
         <ul className="nav__user nav__user-tophead">
           {userNavInfo.map((item) => {
-            return <UserNav {...item} />;
+            return <UserNav {...item} key={item.id} />;
           })}
         </ul>
       </div>
@@ -36,7 +36,7 @@ const Header = () => {
         <ul className="nav__list">
           {navList.map((item) => {
             return (
-              <li className="nav-item">
+              <li className="nav-item" key={item.content}>
                 <NavLink className="nav-link" to={item.address}>
                   {item.content}
                 </NavLink>
@@ -47,7 +47,7 @@ const Header = () => {
         </ul>
         <ul className="nav__user">
           {userNavInfo.map((item) => {
-            return <UserNav {...item} />;
+            return <UserNav {...item} key={item.id} />;
           })}
         </ul>
         <div className="modal-btns">
