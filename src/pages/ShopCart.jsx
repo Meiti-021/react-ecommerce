@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { AllProducts } from "../database/productsDatabase";
 import ShopCartItem from "./ShopcartItem";
 import { FiShoppingCart } from "react-icons/fi";
 import { useSelector } from "react-redux";
@@ -20,7 +19,7 @@ const Shopcart = () => {
       <div className="shop-cart-products">
         {productList.length ? (
           productList.map((item) => {
-            return <ShopCartItem {...item} key={item.id} />;
+            return <ShopCartItem {...item} key={item.info.id} />;
           })
         ) : (
           <ProductNotFound />

@@ -12,17 +12,29 @@ const ShopCartSlice = createSlice({
   initialState,
   reducers: {
     addAmount: (state, { payload }) => {
-      void 0;
+      const productInShopCart = state.productList.findIndex((item) => {
+        return item.info.id === payload;
+      });
+      if (productInShopCart > -1) {
+        state.productList[productInShopCart].amount++;
+      }
+    },
+    lessAmount: (state, { payload }) => {
+      const productInShopCart = state.productList.findIndex((item) => {
+        return item.info.id === payload;
+      });
+      if (productInShopCart > -1) {
+        if (state.productList[productInShopCart].amount > 1) {
+          state.productList[productInShopCart].amount--;
+        }
+      }
     },
     addProduct: (state, { payload }) => {
-      const product = AllProducts.findIndex((item) => {
-        return item.id === payload.id;
-      });
       const isExist = state.productList.some((item) => {
-        return item.id === payload.id;
+        return item.info.id === payload.id;
       });
       if (!isExist) {
-        state.productList.push(AllProducts[product]);
+        state.productList.push(payload);
       }
     },
     addToWishList: (state, { payload }) => {
@@ -49,7 +61,7 @@ const ShopCartSlice = createSlice({
   },
 });
 
-export const { addAmount, addProduct, addToWishList, updateData } =
+export const { addAmount, addProduct, addToWishList, updateData, lessAmount } =
   ShopCartSlice.actions;
 
 export default ShopCartSlice.reducer;

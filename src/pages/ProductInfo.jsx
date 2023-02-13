@@ -15,16 +15,23 @@ import { AllProducts } from "../database/productsDatabase";
 import { addToWishList, addProduct } from "../stats/features/ShopCartSlice";
 import { useDispatch, useSelector } from "react-redux";
 const ProductInfo = () => {
-  const { wishList, productList } = useSelector((state) => state.cart);
+  const { productList } = useSelector((state) => state.cart);
   const disPatch = useDispatch();
   const ProductId = useParams();
   const [product, setProduct] = useState(AllProducts[0]);
+  const [productAmount, setProductAmount] = useState(1);
   const [rate, setRate] = useState(0);
   useEffect(() => {
     const mainProduct = AllProducts.find((item) => {
       const oldid = item.id.split(".")[0];
       return oldid === ProductId.id;
     });
+    const productInShopCart = productList.findIndex((item) => {
+      return item.info.id === mainProduct.id;
+    });
+    if (productInShopCart > -1) {
+      setProductAmount(productList[productInShopCart].amount);
+    }
     setProduct(mainProduct);
     setRate(mainProduct.rate);
   }, []);
@@ -87,26 +94,16 @@ const ProductInfo = () => {
             <div className="counter">
               <button
                 onClick={() => {
-                  let productAmount = product.amount;
-                  if (productAmount >= 0) {
-                    productAmount++;
-                    const mainProductData = AllProducts.findIndex((item) => {
-                      return item.id === product.id;
-                    });
-                    AllProducts[mainProductData].amount = productAmount;
-                    setProduct({ ...product, amount: productAmount });
-                  }
+                  setProductAmount(productAmount + 1);
                 }}
               >
                 +
               </button>
-              {product.amount}
+              {productAmount}
               <button
                 onClick={() => {
-                  let productAmount = product.amount;
-                  if (productAmount > 0) {
-                    productAmount--;
-                    setProduct({ ...product, amount: productAmount });
+                  if (productAmount > 1) {
+                    setProductAmount(productAmount + 1);
                   }
                 }}
               >
@@ -116,7 +113,7 @@ const ProductInfo = () => {
             <button
               className="add-to-cart"
               onClick={() => {
-                disPatch(addProduct(product));
+                disPatch(addProduct({ info: product, amount: productAmount }));
               }}
             >
               افزودن به سبد
