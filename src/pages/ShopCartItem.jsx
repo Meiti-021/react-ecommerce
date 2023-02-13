@@ -6,12 +6,21 @@ import {
   BsFillCaretUpFill,
 } from "../database/icons";
 
-import { addAmount, lessAmount } from "../stats/features/ShopCartSlice";
+import {
+  addAmount,
+  lessAmount,
+  removeItemProducts,
+} from "../stats/features/ShopCartSlice";
 const ShopCartItem = ({ info, amount }) => {
   const disPatch = useDispatch();
   return (
     <div className="shop-cart-item">
-      <button className="remove-item">
+      <button
+        className="remove-item"
+        onClick={() => {
+          disPatch(removeItemProducts(info.id));
+        }}
+      >
         <IoCloseCircle />
       </button>
       <div className="info">

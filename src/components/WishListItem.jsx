@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 import { IoCloseCircle, FiShoppingCart } from "../database/icons";
 import { AllProducts } from "../database/productsDatabase";
 
-import { addProduct } from "../stats/features/ShopCartSlice";
+import {
+  addProduct,
+  removeItemWishList,
+} from "../stats/features/ShopCartSlice";
 const WishListItem = ({ name, priceOn, id }) => {
   const disPatch = useDispatch();
   const [product, setProduct] = useState(AllProducts[0]);
@@ -18,7 +21,12 @@ const WishListItem = ({ name, priceOn, id }) => {
   }, []);
   return (
     <div className="wish-list-item">
-      <button className="remove-item">
+      <button
+        className="remove-item"
+        onClick={() => {
+          disPatch(removeItemWishList(id));
+        }}
+      >
         <IoCloseCircle />
       </button>
       <div className="info">
@@ -35,6 +43,7 @@ const WishListItem = ({ name, priceOn, id }) => {
           className="add-to-cart"
           onClick={() => {
             disPatch(addProduct({ info: product, amount: 1 }));
+            disPatch(removeItemWishList(id));
           }}
         >
           افزودن به سبد

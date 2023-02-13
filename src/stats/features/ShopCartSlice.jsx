@@ -48,20 +48,28 @@ const ShopCartSlice = createSlice({
         state.wishList.push(AllProducts[product]);
       }
     },
-    updateData: (state) => {
-      const updateProductList = [];
-      state.productList.forEach((element) => {
-        const index = AllProducts.findIndex((item) => {
-          return item.id === element.id;
-        });
-        updateProductList.push(AllProducts[index]);
+    removeItemProducts: (state, { payload }) => {
+      const productIdex = state.productList.findIndex((item) => {
+        return item.info.id === payload;
       });
-      state.productList = updateProductList;
+      state.productList.splice(productIdex, 1);
+    },
+    removeItemWishList: (state, { payload }) => {
+      const productIdex = state.wishList.findIndex((item) => {
+        return item.id === payload;
+      });
+      state.wishList.splice(productIdex, 1);
     },
   },
 });
 
-export const { addAmount, addProduct, addToWishList, updateData, lessAmount } =
-  ShopCartSlice.actions;
+export const {
+  addAmount,
+  addProduct,
+  addToWishList,
+  lessAmount,
+  removeItemProducts,
+  removeItemWishList,
+} = ShopCartSlice.actions;
 
 export default ShopCartSlice.reducer;
