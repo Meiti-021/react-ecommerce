@@ -17,7 +17,7 @@ const WishListItem = ({ name, priceOn, id }) => {
     setProduct(mainProduct);
   }, []);
   return (
-    <div className="shop-cart-item">
+    <div className="wish-list-item">
       <button className="remove-item">
         <IoCloseCircle />
       </button>

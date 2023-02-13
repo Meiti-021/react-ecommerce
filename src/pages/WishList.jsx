@@ -6,9 +6,9 @@ import WishListItem from "../components/WishListItem";
 const WishList = () => {
   const { wishList } = useSelector((state) => state.cart);
   return (
-    <div className="shop-cart">
+    <div className="wish-list">
       <h1>موردعلاقه ها</h1>
-      <div className="shop-cart-products">
+      <div className="wish-list-products">
         {wishList.length ? (
           wishList.map((item) => {
             return <WishListItem {...item} key={item.id} />;
