@@ -8,6 +8,7 @@ import MobilePage from "./pages/MobilePage";
 import ProductInfo from "./pages/ProductInfo";
 import ShopCart from "./pages/ShopCart";
 import TvPage from "./pages/SmartTvPage";
+import WishList from "./pages/WishList";
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
           <Route path="/headphones" element={<HeadphonesPage />} />
           <Route path="/laptops" element={<LaptopPage />} />
           <Route path="/cart" element={<ShopCart />} />
+          <Route path="/wish-list" element={<WishList />} />
           <Route path={"/products/:id"} element={<ProductInfo />} />
           <Route path={"/*"} element={<h1>404</h1>} />
         </Routes>

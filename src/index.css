@@ -1616,6 +1616,29 @@ main {
   height: 100%;
 }
 
+.more-info {
+  font-size: 11px;
+  text-decoration: none;
+  color: var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s color;
+}
+.more-info:hover {
+  color: var(--main-accent-color);
+}
+
+.wish-list-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wish-list-btns > * {
+  height: 50%;
+}
+
 @media (max-width: 1350px) {
   .shop-cart-products {
     grid-template-columns: 1fr;
