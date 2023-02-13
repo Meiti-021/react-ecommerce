@@ -31,7 +31,7 @@ const ShopCartSlice = createSlice({
     },
     addProduct: (state, { payload }) => {
       const isExist = state.productList.some((item) => {
-        return item.info.id === payload.id;
+        return item.info.id === payload.info.id;
       });
       if (!isExist) {
         state.productList.push(payload);

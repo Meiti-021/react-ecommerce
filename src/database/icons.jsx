@@ -3,7 +3,7 @@ import { FaTruck, FaShopify, FaSortAmountDownAlt } from "react-icons/Fa";
 import { CgProfile } from "react-icons/cg";
 import { FiShoppingCart } from "react-icons/fi";
 import { TfiMenu } from "react-icons/tfi";
-import { RiHeart3Line } from "react-icons/ri";
+import { RiHeart3Line, RiHeart3Fill } from "react-icons/ri";
 import { BsSearch, BsCreditCard2Back } from "react-icons/bs";
 import { TbError404, TbTruckDelivery, TbDiscount2 } from "react-icons/tb";
 import {
@@ -63,4 +63,5 @@ export {
   IoCloseCircle,
   BsFillCaretDownFill,
   BsFillCaretUpFill,
+  RiHeart3Fill,
 };

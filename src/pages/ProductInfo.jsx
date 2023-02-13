@@ -10,17 +10,27 @@ import {
   BsTwitter,
   FiShoppingCart,
   RiHeart3Line,
+  RiHeart3Fill,
 } from "../database/icons";
 import { AllProducts } from "../database/productsDatabase";
-import { addToWishList, addProduct } from "../stats/features/ShopCartSlice";
+import {
+  addToWishList,
+  addProduct,
+  removeItemWishList,
+  addAmount,
+  lessAmount,
+} from "../stats/features/ShopCartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import WishList from "./WishList";
 const ProductInfo = () => {
-  const { productList } = useSelector((state) => state.cart);
+  const { productList, wishList } = useSelector((state) => state.cart);
   const disPatch = useDispatch();
   const ProductId = useParams();
   const [product, setProduct] = useState(AllProducts[0]);
   const [productAmount, setProductAmount] = useState(1);
   const [rate, setRate] = useState(0);
+  const [isInWishList, setIsInWishList] = useState(false);
+  const [isInCart, setIsInCart] = useState(false);
   useEffect(() => {
     const mainProduct = AllProducts.find((item) => {
       const oldid = item.id.split(".")[0];
@@ -29,12 +39,27 @@ const ProductInfo = () => {
     const productInShopCart = productList.findIndex((item) => {
       return item.info.id === mainProduct.id;
     });
+
     if (productInShopCart > -1) {
       setProductAmount(productList[productInShopCart].amount);
+      setIsInCart(true);
     }
+
     setProduct(mainProduct);
     setRate(mainProduct.rate);
   }, []);
+  useEffect(() => {
+    const mainProduct = AllProducts.find((item) => {
+      const oldid = item.id.split(".")[0];
+      return oldid === ProductId.id;
+    });
+    const productInWishList = wishList.findIndex((item) => {
+      return item.id === mainProduct.id;
+    });
+    if (productInWishList > -1) {
+      setIsInWishList(true);
+    }
+  }, [isInWishList]);
   return (
     <div className="product-info">
       <p className="page-address ">
@@ -94,7 +119,12 @@ const ProductInfo = () => {
             <div className="counter">
               <button
                 onClick={() => {
-                  setProductAmount(productAmount + 1);
+                  if (isInCart) {
+                    setProductAmount(productAmount + 1);
+                    disPatch(addAmount(product.id));
+                  } else {
+                    setProductAmount(productAmount + 1);
+                  }
                 }}
               >
                 +
@@ -102,8 +132,15 @@ const ProductInfo = () => {
               {productAmount}
               <button
                 onClick={() => {
-                  if (productAmount > 1) {
-                    setProductAmount(productAmount + 1);
+                  if (isInCart) {
+                    if (productAmount > 1) {
+                      setProductAmount(productAmount - 1);
+                      disPatch(lessAmount(product.id));
+                    }
+                  } else {
+                    if (productAmount > 1) {
+                      setProductAmount(productAmount + 1);
+                    }
                   }
                 }}
               >
@@ -122,11 +159,21 @@ const ProductInfo = () => {
             <button
               className="add-to-wish-list"
               onClick={() => {
-                disPatch(addToWishList(product.id));
+                if (isInWishList) {
+                  disPatch(removeItemWishList(product.id));
+                  setIsInWishList(false);
+                } else {
+                  disPatch(addToWishList(product.id));
+                  setIsInWishList(true);
+                }
               }}
             >
               افزودن به علاقه مندی ها
-              <RiHeart3Line className="add-to-cart-icon" />
+              {isInWishList ? (
+                <RiHeart3Fill className="add-to-cart-icon" />
+              ) : (
+                <RiHeart3Line className="add-to-cart-icon" />
+              )}
             </button>
           </div>
           <p className="product-info__categories">
