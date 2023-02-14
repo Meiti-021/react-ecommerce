@@ -254,7 +254,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 8px;
+  top: 1px;
   right: -3px;
   color: var(--main-bg-color);
   font-weight: bold;
@@ -791,7 +791,7 @@ main {
 .newsletters-signup {
   min-height: 150px;
   background-color: var(--main-bg-color);
-  width: 100vw;
+  width: 101vw;
   color: var(--main-text-color);
   padding: 100px;
   display: flex;
@@ -1523,6 +1523,7 @@ main {
   border-bottom: 1px solid #a6adb3;
   padding: 50px 30px;
   margin: 0 auto;
+  min-height: 600px;
 }
 
 .shop-cart-item,
@@ -1627,6 +1628,34 @@ main {
   height: 100%;
 }
 
+.add-to-cart-icon-active {
+  animation: heart-shake 0.5s ease-in-out forwards;
+  color: red;
+}
+
+@keyframes heart-shake {
+  0% {
+    font-size: 18px;
+    transform: rotate(0deg);
+  }
+  10% {
+    font-size: 25px;
+    transform: rotate(0deg);
+  }
+  40% {
+    font-size: 25px;
+    transform: rotate(10deg);
+  }
+  70% {
+    font-size: 25px;
+    transform: rotate(-10deg);
+  }
+  100% {
+    font-size: 18px;
+    transform: rotate(0deg);
+  }
+}
+
 .more-info {
   font-size: 11px;
   text-decoration: none;
@@ -1650,8 +1679,30 @@ main {
   height: 50%;
 }
 
+.wish-list-clean-all {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clean-wish-list {
+  width: 200px;
+  height: 50px;
+  font-family: iransans;
+  background-color: var(--main-bg-color);
+  color: var(--main-accent-color);
+  border-radius: 5px;
+  transition: 0.1s transform;
+}
+
+.clean-wish-list:hover {
+  transform: translate(0px, 2px);
+}
+
 @media (max-width: 1350px) {
-  .shop-cart-products {
+  .shop-cart-products,
+  .wish-list-products {
     grid-template-columns: 1fr;
     place-items: center;
   }

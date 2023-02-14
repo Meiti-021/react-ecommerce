@@ -1,10 +1,12 @@
 import React from "react";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { cleanWishList } from "../stats/features/ShopCartSlice";
 import ProductNotFound from "../components/ProductNotFound";
 import WishListItem from "../components/WishListItem";
 const WishList = () => {
   const { wishList } = useSelector((state) => state.cart);
+  const disPatch = useDispatch();
   return (
     <div className="wish-list">
       <h1>موردعلاقه ها</h1>
@@ -16,6 +18,16 @@ const WishList = () => {
         ) : (
           <ProductNotFound />
         )}
+      </div>
+      <div className="wish-list-clean-all">
+        <button
+          className="clean-wish-list"
+          onClick={() => {
+            disPatch(cleanWishList());
+          }}
+        >
+          پاکسازی همه
+        </button>
       </div>
     </div>
   );

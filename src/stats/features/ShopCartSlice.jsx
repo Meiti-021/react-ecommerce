@@ -60,6 +60,9 @@ const ShopCartSlice = createSlice({
       });
       state.wishList.splice(productIdex, 1);
     },
+    cleanWishList: (state) => {
+      state.wishList = [];
+    },
   },
 });
 
@@ -70,6 +73,7 @@ export const {
   lessAmount,
   removeItemProducts,
   removeItemWishList,
+  cleanWishList,
 } = ShopCartSlice.actions;
 
 export default ShopCartSlice.reducer;

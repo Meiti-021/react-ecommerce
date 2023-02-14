@@ -170,9 +170,9 @@ const ProductInfo = () => {
             >
               افزودن به علاقه مندی ها
               {isInWishList ? (
-                <RiHeart3Fill className="add-to-cart-icon" />
+                <RiHeart3Fill className="add-to-cart-icon add-to-cart-icon-active" />
               ) : (
-                <RiHeart3Line className="add-to-cart-icon" />
+                <RiHeart3Line className="add-to-cart-icon " />
               )}
             </button>
           </div>
