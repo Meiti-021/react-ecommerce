@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import HeadphonesPage from "./pages/HeadPhonePage";
 import LandingPage from "./pages/LandingPage";
 import LaptopPage from "./pages/LaptopPage";
+import LoginPage from "./pages/LoginPage";
 import MobilePage from "./pages/MobilePage";
 import ProductInfo from "./pages/ProductInfo";
 import ShopCart from "./pages/ShopCart";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/laptops" element={<LaptopPage />} />
           <Route path="/cart" element={<ShopCart />} />
           <Route path="/wish-list" element={<WishList />} />
+          <Route path="/account-info" element={<LoginPage />} />
           <Route path={"/products/:id"} element={<ProductInfo />} />
           <Route path={"/*"} element={<h1>404</h1>} />
         </Routes>

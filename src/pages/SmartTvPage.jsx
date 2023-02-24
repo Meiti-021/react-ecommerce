@@ -589,6 +589,8 @@ const TvPage = () => {
                   min={0}
                   max={30000000}
                   step={500000}
+                  minValue={priceLimit.min}
+                  maxValue={priceLimit.max}
                   stepOnly={true}
                   style={{
                     border: "none",

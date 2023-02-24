@@ -578,6 +578,8 @@ const LaptopPage = () => {
                   max={30000000}
                   step={500000}
                   stepOnly={true}
+                  minValue={priceLimit.min}
+                  maxValue={priceLimit.max}
                   style={{
                     border: "none",
                     boxShadow: "none",

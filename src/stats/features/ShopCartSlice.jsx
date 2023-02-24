@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { AllProducts } from "../../database/productsDatabase";
+import moment from "moment/moment";
 
 const initialState = {
   productList: [],
   wishList: [],
-  total: 0,
+  history: [],
 };
 
 const ShopCartSlice = createSlice({
@@ -63,6 +64,18 @@ const ShopCartSlice = createSlice({
     cleanWishList: (state) => {
       state.wishList = [];
     },
+    submition: (state) => {
+      state.history.push({
+        historyItem: state.productList,
+        date: `${moment().format()}`,
+      });
+      state.productList = [];
+    },
+    backToInitial: (state) => {
+      state.productList = [];
+      state.wishList = [];
+      state.history = [];
+    },
   },
 });
 
@@ -74,6 +87,8 @@ export const {
   removeItemProducts,
   removeItemWishList,
   cleanWishList,
+  submition,
+  backToInitial,
 } = ShopCartSlice.actions;
 
 export default ShopCartSlice.reducer;

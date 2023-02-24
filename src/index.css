@@ -858,7 +858,6 @@ main {
 
 .footer {
   padding: 50px 50px 30px 50px;
-  border-top: 1px solid #dcdddf;
   background-color: var(--main-bg-color);
 }
 
@@ -1502,8 +1501,17 @@ main {
   list-style-type: none;
 }
 
-.shop-cart,
 .wish-list {
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.shop-cart {
+  width: 100vw;
+}
+
+.shop-cart-container {
   max-width: 1500px;
   margin: 0 auto;
 }
@@ -1633,6 +1641,54 @@ main {
   color: red;
 }
 
+.shop-cart-modal-container {
+  position: absolute;
+  width: 100%;
+  height: 89vh;
+  backdrop-filter: brightness(20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 100;
+}
+
+.shop-cart-modal {
+  width: 400px;
+  background-color: #ededed;
+  height: 200px;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.shop-cart-modal div {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.shop-cart-modal div button {
+  width: 50%;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  font-family: iransans;
+  border-radius: 5px;
+}
+
+.shop-cart-modal div button.yes {
+  background-color: rgb(143, 211, 42);
+  color: #fff;
+}
+.shop-cart-modal div button.no {
+  background-color: rgb(211, 62, 42);
+  color: #fff;
+}
+
 @keyframes heart-shake {
   0% {
     font-size: 18px;
@@ -1705,5 +1761,368 @@ main {
   .wish-list-products {
     grid-template-columns: 1fr;
     place-items: center;
+  }
+}
+
+.login-page {
+  height: 89vh;
+  display: flex;
+  width: 100vw;
+}
+
+.login-page > * {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.login-page-icon {
+  font-size: 300px;
+  color: var(--main-bg-color);
+}
+
+.login-form-side {
+  gap: 15px;
+  background-color: var(--main-bg-color);
+  border-bottom: 1px solid #40464c;
+}
+
+.login-form {
+  max-width: 430px;
+  width: 100%;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-color: #fff;
+  padding: 25px;
+  padding-top: 35px;
+  border-radius: 5px;
+}
+
+.login-form .login-intro-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.login-form .login-intro {
+  grid-column: span 2;
+  text-align: center;
+  font-size: 12px;
+}
+.login-form .input-group {
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 350px;
+}
+
+.login-form .input-group label {
+  font-size: 14px;
+  position: absolute;
+  left: 25px;
+}
+.login-form .input-group input {
+  width: 100%;
+  height: 100%;
+  padding: 0px 25px;
+  border: 1px solid #dcdddf;
+  background-color: #fff;
+  border-radius: 5px;
+  font-family: iransans;
+}
+.login-submit {
+  grid-column: span 2;
+  height: 35px;
+  font-family: iransans;
+  border: none;
+  background-color: var(--main-accent-color);
+  border-radius: 5px;
+  color: #041e42;
+  min-width: 350px;
+}
+
+.input-group-check {
+  width: 100%;
+  max-width: 340px;
+  font-size: 11px;
+  text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.login-form .login-intro span {
+  cursor: pointer;
+  color: #0070dc;
+}
+
+@media (max-width: 1000px) {
+  .login-page {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    gap: 50px;
+    background-color: var(--main-bg-color);
+    padding: 50px 0px;
+  }
+  .login-page > * {
+    width: 100%;
+  }
+  .login-page .design-side {
+    background-color: var(--main-bg-color);
+  }
+  .login-page-icon {
+    color: #fff;
+    font-size: 150px;
+  }
+  .login-form-side {
+    border: none;
+  }
+}
+
+.account {
+  min-height: 750px;
+  background-color: var(--main-bg-color);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto 380px;
+  gap: 15px;
+  padding: 15px 50px;
+  direction: rtl;
+}
+
+.account > * {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #707c87;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.account__info {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 40px 70px 70px 120px;
+  gap: 10px;
+  color: #fff;
+}
+
+.account__info .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.account__info input {
+  height: 70%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: #000;
+  font-family: iransans;
+}
+.account__info input:focus {
+  border: none;
+  outline: none;
+}
+.account__info label {
+  height: 25%;
+  color: #fff;
+  font-size: 14px;
+}
+.account__info label::after {
+  content: " :";
+}
+.account__info h2,
+.account__history h2,
+.account__card h2,
+.account__security h2 {
+  grid-column: span 2;
+  font-size: 18px;
+  font-weight: normal;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.account__info textarea {
+  grid-column: span 2;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: iransans;
+  margin-top: 30px;
+  resize: none;
+}
+
+.account-edit-icon {
+  color: red;
+  position: absolute;
+  bottom: 11px;
+  left: 10px;
+  color: #a6adb3;
+  padding: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.account__history-table {
+  color: #fff;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.account__history-table thead tr {
+  height: 35px;
+}
+
+.account__history-data {
+  margin-top: 25px;
+}
+
+.account__history-table tr {
+  height: 50px;
+  border: 1px solid #fff;
+}
+
+.account__history-table td {
+  text-align: center;
+  border: 1px solid #fff;
+  border-collapse: collapse;
+}
+
+.swiper {
+  width: 350px;
+  height: 240px;
+  margin-top: 35px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  outline: 1px solid #fff;
+}
+
+.swiper-slide {
+  background-image: url("./assets/main/card-bg.jpeg");
+  background-size: cover;
+}
+
+.credit-card {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  position: relative;
+}
+.credit-card img {
+  width: 50px;
+  background: transparent;
+  border-radius: 6px;
+  position: absolute;
+  left: 50px;
+  top: 100px;
+}
+.credit-card .bank-name {
+  font-family: sans-serif;
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+}
+.credit-card .cvv2 {
+  position: absolute;
+  top: 110px;
+  font-weight: normal;
+  font-size: 22px;
+}
+.credit-card h2 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0px;
+  bottom: 40px;
+  padding: 0 50px;
+  font-family: "Russo One", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.account_setting-btns {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.account_setting-btns > * {
+  width: 100%;
+  height: 40px;
+  direction: ltr;
+  max-width: 350px;
+  padding: 0 20px;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+  font-family: iransans;
+  border: 1px solid #fff;
+  transition: 0.3s transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.account_setting-btns > * > * {
+  margin-right: auto;
+  font-size: 20px;
+}
+
+.account_setting-btns > *:hover {
+  transform: translate(0px, -3px);
+}
+
+@media (max-width: 1250px) {
+  .account {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+    padding: 15px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .account__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .account__info .input-group {
+    height: 70px;
+  }
+  .account__history th {
+    font-size: 14px;
+  }
+  .account__history td {
+    font-size: 13px;
   }
 }

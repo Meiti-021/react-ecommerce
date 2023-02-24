@@ -1,36 +1,77 @@
 import React, { useEffect, useState } from "react";
 import ShopCartItem from "./ShopcartItem";
 import { FiShoppingCart } from "react-icons/fi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ProductNotFound from "../components/ProductNotFound";
+import { submition } from "../stats/features/ShopCartSlice";
 const Shopcart = () => {
+  const disPatch = useDispatch();
   const { productList } = useSelector((state) => state.cart);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
     let total = 0;
     productList.forEach((element) => {
-      total += element.amount * element.priceOn;
+      total += element.amount * element.info.priceOn;
     });
     setTotalPrice(total);
   }, [productList]);
   return (
     <div className="shop-cart">
-      <h1>سبد خرید شما</h1>
-      <div className="shop-cart-products">
-        {productList.length ? (
-          productList.map((item) => {
-            return <ShopCartItem {...item} key={item.info.id} />;
-          })
-        ) : (
-          <ProductNotFound />
-        )}
+      <div
+        className="shop-cart-modal-container"
+        style={isModalOpen ? { display: "flex" } : { display: "none" }}
+      >
+        <div className="shop-cart-modal">
+          <p>آیا از ثبت سفارش مطمئن هستید؟</p>
+          <div>
+            <button
+              className="yes"
+              onClick={() => {
+                disPatch(submition());
+                setIsModalOpen(false);
+              }}
+            >
+              بله
+            </button>
+            <button
+              className="no"
+              onClick={() => {
+                setIsModalOpen(false);
+              }}
+            >
+              خیر
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="shop-cart-total-price">
-        <p>مجموع: {totalPrice} تومان</p>
-        <button className="add-to-cart">
-          ثبت سفارش
-          <FiShoppingCart className="add-to-cart-icon" />
-        </button>
+      <div className="shop-cart-container">
+        <h1>سبد خرید شما</h1>
+        <div className="shop-cart-products">
+          {productList.length ? (
+            productList.map((item) => {
+              return <ShopCartItem {...item} key={item.info.id} />;
+            })
+          ) : (
+            <ProductNotFound />
+          )}
+        </div>
+        <div className="shop-cart-total-price">
+          <p>مجموع: {totalPrice} تومان</p>
+          <button
+            className="add-to-cart"
+            onClick={() => {
+              if (productList.length !== 0) {
+                setIsModalOpen(true);
+              } else {
+                alert("سبد خرید شما خالی است!");
+              }
+            }}
+          >
+            ثبت سفارش
+            <FiShoppingCart className="add-to-cart-icon" />
+          </button>
+        </div>
       </div>
     </div>
   );
