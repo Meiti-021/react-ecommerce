@@ -7,6 +7,7 @@ import { submition } from "../stats/features/ShopCartSlice";
 const Shopcart = () => {
   const disPatch = useDispatch();
   const { productList } = useSelector((state) => state.cart);
+  const { isLogin } = useSelector((state) => state.user);
   const [totalPrice, setTotalPrice] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
@@ -28,8 +29,13 @@ const Shopcart = () => {
             <button
               className="yes"
               onClick={() => {
-                disPatch(submition());
-                setIsModalOpen(false);
+                if (isLogin) {
+                  disPatch(submition());
+                  setIsModalOpen(false);
+                } else {
+                  setIsModalOpen(false);
+                  alert("ابتدا باید وارد حسابتان شوید");
+                }
               }}
             >
               بله

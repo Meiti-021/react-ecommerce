@@ -20,7 +20,7 @@ const BestProducts = ({
           alt=""
           className="best-product__image"
         />
-        {priceOff ? (
+        {priceOn - priceOff ? (
           <div className="best-product__offer">
             <p>تخفیف</p>
             <p>{`${Math.abs(
@@ -52,8 +52,10 @@ const BestProducts = ({
 
       <div className="best-product__footer">
         <div className="best-product__price">
-          {priceOff !== 0 && <p className="off-price">{priceOff} تومان</p>}
-          <p className="on-price">{priceOn} تومان</p>
+          {priceOn - priceOff !== 0 && (
+            <p className="off-price">{priceOn} تومان</p>
+          )}
+          <p className="on-price">{priceOff} تومان</p>
         </div>
         <div className="best-product__btns">
           <a href="#" className="best-product__buy-link">

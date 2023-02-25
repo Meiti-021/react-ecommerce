@@ -14,13 +14,10 @@ const BestSellers = () => {
   }, []);
   const bestsHandler = (event) => {
     if (event.target.id === "offers__btn") {
-      const copyData = [...AllProducts];
-      copyData.forEach((product) => {
-        product["offer"] =
-          (product.priceOff - product.priceOn * 100) / product.priceOn;
-      });
-      const sortedArray = copyData.sort((a, b) => {
-        return b.offer - a.offer;
+      const sortedArray = AllProducts.sort((a, b) => {
+        const a_off = (100 * (a.priceOn - a.priceOff)) / a.priceOn;
+        const b_off = (100 * (b.priceOn - b.priceOff)) / b.priceOn;
+        return b_off - a_off;
       });
       setProductList(sortedArray.slice(0, 6));
       setActiveBtn({ popular: false, news: false, offers: true });

@@ -11,7 +11,7 @@ const NewslettersSignUp = () => {
         </p>
       </div>
       <div className="newsletters-signup__form">
-        <input type="email" placeholder="آدرس ایمیل شما" />
+        <input type="email" placeholder="آدرس ایمیل شما" required />
         <button>ثبت</button>
       </div>
     </div>

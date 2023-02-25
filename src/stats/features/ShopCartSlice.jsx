@@ -43,7 +43,7 @@ const ShopCartSlice = createSlice({
         return item.id === payload;
       });
       const isExist = state.wishList.some((item) => {
-        return item.id === payload.id;
+        return item.id === payload;
       });
       if (!isExist) {
         state.wishList.push(AllProducts[product]);

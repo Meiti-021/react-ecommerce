@@ -571,7 +571,7 @@ const LaptopPage = () => {
               </div>
             </div>
             <div className="filter-by">
-              <p>محدودیت قیمت </p>
+              <p>محدوده قیمت </p>
               <div className="input-group input-price-group">
                 <MultiRangeSlider
                   min={0}

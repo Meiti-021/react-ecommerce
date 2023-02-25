@@ -68,7 +68,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones"],
     color: "black",
     priceOn: 395000,
-    priceOff: 415000,
+    priceOff: 385000,
     brand: "xi",
     features: [
       {
@@ -102,7 +102,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones"],
     color: "white",
     priceOn: 590000,
-    priceOff: 610000,
+    priceOff: 570000,
     brand: "xi",
     features: [
       {
@@ -136,7 +136,7 @@ export const AllProducts = [
     categories: ["Headphones"],
     color: "colory",
     priceOn: 280000,
-    priceOff: 0,
+    priceOff: 280000,
     brand: "xi",
     features: [
       {
@@ -166,7 +166,7 @@ export const AllProducts = [
     categories: ["Headphones"],
     color: "colory",
     priceOn: 1500000,
-    priceOff: 0,
+    priceOff: 1500000,
     brand: "samsung",
     features: [
       {
@@ -226,7 +226,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones", "Appliance"],
     color: "black",
     priceOn: 790000,
-    priceOff: 0,
+    priceOff: 790000,
     brand: "xi",
     features: [
       {
@@ -290,7 +290,7 @@ export const AllProducts = [
     categories: ["Headphones", "Appliance"],
     color: "black",
     priceOn: 570000,
-    priceOff: 0,
+    priceOff: 570000,
     brand: "samsung",
     features: [
       {
@@ -346,7 +346,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones", "Appliance"],
     color: "black",
     priceOn: 540000,
-    priceOff: 0,
+    priceOff: 540000,
     brand: "sony",
     features: [
       {
@@ -406,7 +406,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones", "Appliance"],
     color: "white",
     priceOn: 2270000,
-    priceOff: 0,
+    priceOff: 2270000,
     brand: "sony",
     features: [
       {
@@ -436,7 +436,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones", "Appliance"],
     color: "white",
     priceOn: 2190000,
-    priceOff: 0,
+    priceOff: 2190000,
     brand: "apple",
     features: [
       {
@@ -466,7 +466,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones", "Appliance"],
     color: "black",
     priceOn: 680000,
-    priceOff: 0,
+    priceOff: 680000,
     brand: "apple",
     features: [
       {
@@ -496,7 +496,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones", "Appliance"],
     color: "black",
     priceOn: 197000,
-    priceOff: 0,
+    priceOff: 197000,
     brand: "xi",
     features: [
       {
@@ -526,7 +526,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones", "Appliance"],
     color: "black",
     priceOn: 1340000,
-    priceOff: 0,
+    priceOff: 1340000,
     brand: "apple",
     features: [
       {
@@ -556,7 +556,7 @@ export const AllProducts = [
     categories: ["Wireless Headphones", "Headphones", "Appliance"],
     color: "colory",
     priceOn: 550000,
-    priceOff: 0,
+    priceOff: 550000,
     brand: "sony",
     features: [
       {
@@ -619,8 +619,8 @@ export const AllProducts = [
     engName: "",
     model: "redmi 9c xiaomi",
     categories: ["Mobile"],
-    priceOn: 3_900_000,
-    priceOff: null,
+    priceOn: 3900000,
+    priceOff: 3900000,
     brand: "xi",
     features: [
       {
@@ -670,8 +670,8 @@ export const AllProducts = [
     engName: "",
     model: "Xiaomi 11T Pro 5G 256/12 GB",
     categories: ["Mobile"],
-    priceOn: 16_150_000,
-    priceOff: null,
+    priceOn: 16150000,
+    priceOff: 16150000,
     brand: "xi",
     features: [
       {
@@ -773,7 +773,7 @@ export const AllProducts = [
     model: "Xiaomi Mi 10 5G 8/256 GB",
     categories: ["Mobile"],
     priceOn: 12000000,
-    priceOff: null,
+    priceOff: 12000000,
     brand: "",
     features: [
       {
@@ -926,7 +926,7 @@ export const AllProducts = [
     model: "Poco F3 5G",
     categories: ["Mobile"],
     priceOn: 10_900_000,
-    priceOff: null,
+    priceOff: 10_900_000,
     brand: "xi",
     features: [
       {
@@ -977,7 +977,7 @@ export const AllProducts = [
     model: "Mi 11 5G",
     categories: ["Mobile"],
     priceOn: 21_590_000,
-    priceOff: null,
+    priceOff: 21_590_000,
     brand: "xi",
     features: [
       {
@@ -1079,7 +1079,7 @@ export const AllProducts = [
     model: "Redmi Note 9 Pro Max",
     categories: ["Mobile"],
     priceOn: 7_030_000,
-    priceOff: null,
+    priceOff: 7_030_000,
     brand: "xi",
     features: [
       {
@@ -1385,7 +1385,7 @@ export const AllProducts = [
     model: "Xiaomi Redmi Note 9 Pro",
     categories: ["Mobile"],
     priceOn: 5_345_000,
-    priceOff: null,
+    priceOff: 5_345_000,
     brand: "xi",
     features: [
       {
@@ -1487,7 +1487,7 @@ export const AllProducts = [
     model: "Note 9",
     categories: ["Mobile"],
     priceOn: 4_350_000,
-    priceOff: null,
+    priceOff: 4_350_000,
     brand: "samsung",
     features: [
       {
