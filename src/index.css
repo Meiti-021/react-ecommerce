@@ -169,7 +169,7 @@ header {
   padding: 0px 150px;
   gap: 15px;
   height: 50px;
-  border-top: 1px solid #40464c;
+  outline: 1px solid #40464c;
 }
 
 .nav ul {
@@ -2181,4 +2181,25 @@ main {
 @font-face {
   font-family: adad;
   src: url("./assets/iranyekanwebmediumfanum.ttf");
+}
+
+.page-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 89vh;
+  gap: 10px;
+  direction: rtl;
+}
+.page-404 h1 {
+  font-size: 60px;
+  margin-top: -65px;
+  margin-bottom: 20px;
+}
+.page-404 > * {
+  text-align: center;
+}
+.page-404 h3 {
+  line-height: 2;
 }

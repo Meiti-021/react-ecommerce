@@ -10,6 +10,7 @@ import ProductInfo from "./pages/ProductInfo";
 import ShopCart from "./pages/ShopCart";
 import TvPage from "./pages/SmartTvPage";
 import WishList from "./pages/WishList";
+import Page404 from "./pages/Page404";
 function App() {
   return (
     <div className="App">
@@ -25,7 +26,7 @@ function App() {
           <Route path="/wish-list" element={<WishList />} />
           <Route path="/account-info" element={<LoginPage />} />
           <Route path={"/products/:id"} element={<ProductInfo />} />
-          <Route path={"/*"} element={<h1>404</h1>} />
+          <Route path={"/*"} element={<Page404 />} />
         </Routes>
         <Footer />
       </Router>
