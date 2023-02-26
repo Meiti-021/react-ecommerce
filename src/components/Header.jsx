@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaShopify, TfiMenu, BsSearch } from "../database/icons";
 import { headerOption, navList, userNavInfo } from "../database/mockdata";
 import HeaderOption from "./HeaderOption";
 import { NavLink } from "react-router-dom";
 import UserNav from "./UserNav";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <header className="header">
       <div className="top-head">

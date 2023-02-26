@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router";
 import StarRating from "../components/StarRating";
 import {
@@ -95,23 +95,25 @@ const ProductInfo = () => {
           <div className="product-info__price">
             {product.priceOff ? (
               <p>
-                <span className="product-info__price-off">
+                <span className="product-info__price-off number">
                   {product.priceOn}ت
                 </span>
-                <span className="product-info__price-on">
+                <span className="product-info__price-on number">
                   {product.priceOff}ت
                 </span>
               </p>
             ) : (
               <p>
-                <span className="product-info__price-off">
-                  {product.priceOn}ت
+                <span className="product-info__price-off number">
+                  {product.priceOn} ت
                 </span>
               </p>
             )}
             <div>
               <StarRating rate={rate} />
-              <span className="product-reviews">({product.reviews})</span>
+              <span className="product-reviews number">
+                ({product.reviews})
+              </span>
             </div>
           </div>
 

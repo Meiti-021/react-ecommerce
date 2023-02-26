@@ -137,8 +137,12 @@ const HeadphonesPage = () => {
       <p className="page-address">خانه / موبایل</p>
       <div className="head-menu">
         <p className="product-counter">
-          نمایش {`${(page - 1) * 6 + 1} - ${(page - 1) * 6 + 6}`} محصول از{" "}
-          {headphoneProducts.length} محصول
+          نمایش
+          <span className="number">{`${(page - 1) * 6 + 1} - ${
+            (page - 1) * 6 + 6
+          }`}</span>
+          محصول از <span className="number">{headphoneProducts.length}</span>{" "}
+          محصول
         </p>
         <FaSortAmountDownAlt />
         <select
@@ -159,7 +163,7 @@ const HeadphonesPage = () => {
                 onClick={() => {
                   setPage(index + 1);
                 }}
-                className={index + 1 === page ? "active" : ""}
+                className={index + 1 === page ? "active number" : "number"}
               >
                 {index + 1}
               </button>

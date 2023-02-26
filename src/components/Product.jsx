@@ -22,13 +22,14 @@ const Product = ({ name, id, priceOff, priceOn, exist }) => {
         <div className="product__footer-price">
           {priceOff ? (
             <p className="product__price-on">
-              {priceOn} <span>تومان</span>
+              <span className="number">{priceOn}</span> <span>تومان</span>
             </p>
           ) : (
             void 0
           )}
           <p className="product__price-offer">
-            {priceOff ? priceOff : priceOn} <span>تومان</span>
+            <span className="number">{priceOff ? priceOff : priceOn}</span>{" "}
+            <span>تومان</span>
           </p>
         </div>
         <div className="product__footer-link">

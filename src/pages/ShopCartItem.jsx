@@ -29,7 +29,7 @@ const ShopCartItem = ({ info, amount }) => {
         </figure>
         <div className="content">
           <p className="name">{info.name} </p>
-          <p className="price">{info.priceOn}ت</p>
+          <p className="price number">{info.priceOn}ت</p>
         </div>
       </div>
       <div className="counter-section">

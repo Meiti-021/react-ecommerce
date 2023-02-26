@@ -9,9 +9,11 @@ const UserNav = ({ id, icon, address }) => {
         <div className="user-nav__icon">
           {icon}
           {id === "nav-wish-list" && wishList.length ? (
-            <span className="user-nav__counter">{wishList.length}</span>
+            <span className="user-nav__counter number">{wishList.length}</span>
           ) : id === "nav-cart" && productList.length ? (
-            <span className="user-nav__counter">{productList.length}</span>
+            <span className="user-nav__counter number">
+              {productList.length}
+            </span>
           ) : (
             void 0
           )}

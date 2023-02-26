@@ -165,8 +165,12 @@ const TvPage = () => {
       <p className="page-address">خانه / موبایل</p>
       <div className="head-menu">
         <p className="product-counter">
-          نمایش {`${(page - 1) * 6 + 1} - ${(page - 1) * 6 + 6}`} محصول از{" "}
-          {tvProducts.length} محصول
+          نمایش{" "}
+          <span className="number">
+            {" "}
+            {`${(page - 1) * 6 + 1} - ${(page - 1) * 6 + 6}`}
+          </span>{" "}
+          محصول از <span className="number">{tvProducts.length} </span> محصول
         </p>
         <FaSortAmountDownAlt />
         <select

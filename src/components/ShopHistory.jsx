@@ -13,7 +13,7 @@ const ShopHistory = ({ sort, historyItem, date }) => {
   return (
     <tr className="shop-history">
       <td>{sort}</td>
-      <td>{total}</td>
+      <td className="number">{total}</td>
       <td>در دست بررسی</td>
       <td>{date}</td>
     </tr>

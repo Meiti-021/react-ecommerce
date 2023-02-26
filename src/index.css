@@ -38,6 +38,9 @@ header {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
   direction: rtl;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .top-head {
@@ -167,7 +170,6 @@ header {
   gap: 15px;
   height: 50px;
   border-top: 1px solid #40464c;
-  border-bottom: 1px solid #40464c;
 }
 
 .nav ul {
@@ -254,10 +256,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 1px;
-  right: -3px;
+  top: -3px;
+  right: -5px;
   color: var(--main-bg-color);
   font-weight: bold;
+  padding-top: 1px;
 }
 .user-nav-link {
   text-decoration: none;
@@ -543,6 +546,7 @@ main {
 .rate-number {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #707c87;
+  margin-top: 5px;
 }
 
 .best-product__condition {
@@ -569,6 +573,9 @@ main {
 }
 .on-price {
   color: var(--third-text-color);
+}
+.best-product .number {
+  font-size: 16px;
 }
 
 .best-product__buy-link {
@@ -967,7 +974,12 @@ main {
 .product-counter {
   height: 100%;
   border-left: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0px 0px 0px 170px;
+  padding: 0px 0px 0px 0px;
+  width: 220px;
+}
+.product-counter .number {
+  padding: 7px;
+  font-size: 13px;
 }
 
 .mobile-page-product-container,
@@ -1153,8 +1165,11 @@ main {
 .product__price-on {
   font-size: 12px;
   color: #707c87;
-  text-decoration: line-through;
   margin-bottom: -5px;
+}
+.product__price-on .number {
+  font-size: 13px;
+  text-decoration: line-through;
 }
 
 .product__price-on span {
@@ -1163,6 +1178,9 @@ main {
 .product__price-offer {
   font-size: 22px;
   color: var(--main-bg-color);
+}
+.product__price-offer .number {
+  font-size: 20px;
 }
 
 .product__price-offer span {
@@ -1259,6 +1277,9 @@ main {
   border-radius: 50%;
   border: 2px solid #a6adb3;
   background-color: #fff;
+  font-family: adad;
+  font-size: 15px;
+  padding-top: 2px;
 }
 .pagination button.active {
   background-color: var(--main-bg-color);
@@ -2125,4 +2146,12 @@ main {
   .account__history td {
     font-size: 13px;
   }
+}
+
+.number {
+  font-family: adad;
+}
+@font-face {
+  font-family: adad;
+  src: url("./assets/iranyekanwebmediumfanum.ttf");
 }

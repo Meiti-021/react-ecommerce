@@ -35,7 +35,7 @@ const WishListItem = ({ name, priceOn, id }) => {
         </figure>
         <div className="content">
           <p className="name">{name} </p>
-          <p className="price">{priceOn}ت</p>
+          <p className="price number">{priceOn}ت</p>
         </div>
       </div>
       <div className="wish-list-btns">

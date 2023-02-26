@@ -165,8 +165,11 @@ const MobilePage = () => {
       <p className="page-address">خانه / موبایل</p>
       <div className="head-menu">
         <p className="product-counter">
-          نمایش {`${(page - 1) * 6 + 1} - ${(page - 1) * 6 + 6}`} محصول از{" "}
-          {mobileProducts.length} محصول
+          نمایش
+          <span className="number">{`${(page - 1) * 6 + 1} - ${
+            (page - 1) * 6 + 6
+          }`}</span>
+          محصول از <span className="number">{mobileProducts.length}</span> محصول
         </p>
         <FaSortAmountDownAlt />
         <select
