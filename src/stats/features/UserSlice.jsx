@@ -49,6 +49,11 @@ const initialState = {
     },
   ],
   isLogin: false,
+  alerts: {
+    navcart: false,
+    navwishlist: false,
+    navprofile: false,
+  },
 };
 
 const UserSlice = createSlice({
@@ -83,6 +88,9 @@ const UserSlice = createSlice({
     goPremium: (state) => {
       state.membership = "premium";
     },
+    setAlert: (state, { payload }) => {
+      state.alerts[payload.id] = payload.message;
+    },
   },
 });
 
@@ -94,6 +102,7 @@ export const {
   cancelNewsletter,
   logout,
   deleteAccount,
+  setAlert,
 } = UserSlice.actions;
 
 export default UserSlice.reducer;

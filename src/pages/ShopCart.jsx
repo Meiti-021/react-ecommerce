@@ -4,12 +4,14 @@ import { FiShoppingCart } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import ProductNotFound from "../components/ProductNotFound";
 import { submition } from "../stats/features/ShopCartSlice";
+import { setAlert } from "../stats/features/UserSlice";
 const Shopcart = () => {
   const disPatch = useDispatch();
   const { productList } = useSelector((state) => state.cart);
   const { isLogin } = useSelector((state) => state.user);
   const [totalPrice, setTotalPrice] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     let total = 0;
     productList.forEach((element) => {
@@ -34,7 +36,12 @@ const Shopcart = () => {
                   setIsModalOpen(false);
                 } else {
                   setIsModalOpen(false);
-                  alert("ابتدا باید وارد حسابتان شوید");
+                  disPatch(
+                    setAlert({
+                      id: "navprofile",
+                      message: "ابتدا باید وارد حسابتان شوید!",
+                    })
+                  );
                 }
               }}
             >
@@ -70,7 +77,9 @@ const Shopcart = () => {
               if (productList.length !== 0) {
                 setIsModalOpen(true);
               } else {
-                alert("سبد خرید شما خالی است!");
+                disPatch(
+                  setAlert({ id: "navcart", message: "سبد خرید شما خالی است!" })
+                );
               }
             }}
           >

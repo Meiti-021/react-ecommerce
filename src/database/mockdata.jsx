@@ -96,17 +96,17 @@ const shopInfo = [
 
 const userNavInfo = [
   {
-    id: "nav-profile",
+    id: "navprofile",
     icon: <CgProfile />,
     address: "/account-info",
   },
   {
-    id: "nav-wish-list",
+    id: "navwishlist",
     icon: <RiHeart3Line />,
     address: "/wish-list",
   },
   {
-    id: "nav-cart",
+    id: "navcart",
     icon: <FiShoppingCart />,
     address: "/cart",
   },
