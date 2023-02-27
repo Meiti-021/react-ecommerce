@@ -170,6 +170,7 @@ header {
   gap: 15px;
   height: 50px;
   outline: 1px solid #40464c;
+  position: relative;
 }
 
 .nav ul {
@@ -304,6 +305,38 @@ header {
 
 .search-modal-open {
   display: none !important;
+  transition: 0.5s transform;
+}
+.nav-bar-menu-modal {
+  transform: rotate(90deg);
+}
+
+.side-nav {
+  position: absolute;
+  width: 100vw;
+  height: 89vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  right: -100vw;
+  background-color: var(--main-bg-color);
+  transition: 0.5s right;
+}
+.side-nav li {
+  height: 50px;
+  width: 100%;
+  font-size: 17px;
+  border-bottom: 1px solid #40464c;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  transition: 0.5s transform;
+  cursor: pointer;
+}
+.side-nav li:hover {
+  transform: translate(0px, -7px);
+  color: var(--main-accent-color);
 }
 
 @media (max-width: 1250px) {

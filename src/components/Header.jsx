@@ -5,11 +5,14 @@ import HeaderOption from "./HeaderOption";
 import { NavLink } from "react-router-dom";
 import UserNav from "./UserNav";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
   const location = useLocation();
+  const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
+    setIsSideNavOpen(false);
   }, [location]);
   return (
     <header className="header">
@@ -59,11 +62,38 @@ const Header = () => {
           <button className="search-modal-open">
             <BsSearch />
           </button>
-          <button className="search-modal-open">
+          <button
+            className={
+              isSideNavOpen
+                ? "search-modal-open nav-bar-menu-modal"
+                : "search-modal-open"
+            }
+            onClick={() => {
+              if (isSideNavOpen) {
+                setIsSideNavOpen(false);
+              } else {
+                setIsSideNavOpen(true);
+              }
+            }}
+          >
             <TfiMenu />
           </button>
         </div>
       </nav>
+      <ul
+        className="side-nav"
+        style={isSideNavOpen ? { right: "0px" } : { right: "-100vw" }}
+      >
+        {navList.map((item) => {
+          return (
+            <li className="nav-item" key={item.content}>
+              <NavLink className="nav-link" to={item.address}>
+                {item.content}
+              </NavLink>
+            </li>
+          );
+        })}
+      </ul>
     </header>
   );
 };
