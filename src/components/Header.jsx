@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { FaShopify, TfiMenu, BsSearch } from "../database/icons";
 import { headerOption, navList, userNavInfo } from "../database/mockdata";
 import HeaderOption from "./HeaderOption";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import UserNav from "./UserNav";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -10,6 +10,7 @@ import { useState } from "react";
 const Header = () => {
   const location = useLocation();
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsSideNavOpen(false);
@@ -37,7 +38,12 @@ const Header = () => {
         </ul>
       </div>
       <nav className="nav">
-        <button className="nav__categories">
+        <button
+          className="nav__categories"
+          onClick={() => {
+            navigate("/all-products");
+          }}
+        >
           <TfiMenu />
           همه دسته ها
         </button>
@@ -82,7 +88,9 @@ const Header = () => {
       </nav>
       <ul
         className="side-nav"
-        style={isSideNavOpen ? { right: "0px" } : { right: "-100vw" }}
+        style={
+          isSideNavOpen ? { right: "0px", opacity: "1" } : { right: "-100vw" }
+        }
       >
         {navList.map((item) => {
           return (
