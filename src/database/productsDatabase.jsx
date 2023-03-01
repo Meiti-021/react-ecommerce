@@ -2,6 +2,7 @@ export const AllProducts = [
   {
     id: "0bd85b.jpg",
     name: "هندزفری بلوتوث شیائومی مدل Redmi Buds Essential",
+    model: "Redmi Buds Essential",
     categories: ["Wireless Headphones", "Headphones"],
     color: "black",
     priceOn: 665000,
@@ -23,6 +24,7 @@ export const AllProducts = [
     id: "a602d0.jpg",
     name: "هدفون شیائومی مدل Headphones Piston Basic",
     categories: ["Wireless Headphones", "Headphones"],
+    model: "IN-EAR BASIC",
     color: "black",
     priceOn: 350000,
     priceOff: 300000,

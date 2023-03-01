@@ -12,6 +12,7 @@ import TvPage from "./pages/SmartTvPage";
 import WishList from "./pages/WishList";
 import Page404 from "./pages/Page404";
 import AllOfProducts from "./pages/AllProducts";
+import SearchPage from "./pages/SearchPage";
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
           <Route path="/wish-list" element={<WishList />} />
           <Route path="/all-products" element={<AllOfProducts />} />
           <Route path="/account-info" element={<LoginPage />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path={"/products/:id"} element={<ProductInfo />} />
           <Route path={"/*"} element={<Page404 />} />
         </Routes>

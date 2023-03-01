@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { FaShopify, TfiMenu, BsSearch } from "../database/icons";
 import { headerOption, navList, userNavInfo } from "../database/mockdata";
 import HeaderOption from "./HeaderOption";
@@ -6,15 +6,20 @@ import { NavLink, useNavigate } from "react-router-dom";
 import UserNav from "./UserNav";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { searchProduct } from "../stats/features/ShopCartSlice";
+import { Link } from "react-router-dom";
 const Header = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsSideNavOpen(false);
   }, [location]);
+  const searchInput = useRef(null);
+
   return (
     <header className="header">
       <div className="top-head">
@@ -23,8 +28,20 @@ const Header = () => {
           <FaShopify />
         </div>
         <div className="search-product">
-          <input type="search" placeholder="نام محصول را وارد کنید" />
-          <button>جستجو</button>
+          <input
+            type="search"
+            placeholder="نام محصول را وارد کنید"
+            ref={searchInput}
+          />
+          <Link
+            to="/search"
+            onClick={() => {
+              dispatch(searchProduct(searchInput.current.value));
+            }}
+            className="link-btn"
+          >
+            جستجو
+          </Link>
         </div>
         <div className="header-options">
           {headerOption.map((option) => {

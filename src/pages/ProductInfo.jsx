@@ -170,7 +170,10 @@ const ProductInfo = () => {
                 }
               }}
             >
-              افزودن به علاقه مندی ها
+              <span className="add-to-favorites-text">
+                {" "}
+                افزودن به علاقه مندی ها
+              </span>
               {isInWishList ? (
                 <RiHeart3Fill className="add-to-cart-icon add-to-cart-icon-active" />
               ) : (

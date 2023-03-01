@@ -6,6 +6,7 @@ const initialState = {
   productList: [],
   wishList: [],
   history: [],
+  search: [],
 };
 
 const ShopCartSlice = createSlice({
@@ -76,6 +77,12 @@ const ShopCartSlice = createSlice({
       state.wishList = [];
       state.history = [];
     },
+    searchProduct: (state, { payload }) => {
+      state.search = payload;
+    },
+    clearSearch: (state) => {
+      state.search = [];
+    },
   },
 });
 
@@ -89,6 +96,8 @@ export const {
   cleanWishList,
   submition,
   backToInitial,
+  clearSearch,
+  searchProduct,
 } = ShopCartSlice.actions;
 
 export default ShopCartSlice.reducer;

@@ -70,7 +70,7 @@ const Shopcart = () => {
           )}
         </div>
         <div className="shop-cart-total-price">
-          <p>مجموع: {totalPrice} تومان</p>
+          <p className="number">مجموع: {totalPrice} تومان</p>
           <button
             className="add-to-cart"
             onClick={() => {
