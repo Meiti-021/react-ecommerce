@@ -19,6 +19,7 @@ const Header = () => {
     setIsSideNavOpen(false);
   }, [location]);
   const searchInput = useRef(null);
+  const searchInputNav = useRef(null);
 
   return (
     <header className="header">
@@ -82,7 +83,16 @@ const Header = () => {
           })}
         </ul>
         <div className="modal-btns">
-          <button className="search-modal-open">
+          <button
+            className="search-modal-open"
+            onClick={() => {
+              if (isSideNavOpen) {
+                setIsSideNavOpen(false);
+              } else {
+                setIsSideNavOpen(true);
+              }
+            }}
+          >
             <BsSearch />
           </button>
           <button
@@ -109,6 +119,22 @@ const Header = () => {
           isSideNavOpen ? { right: "0px", opacity: "1" } : { right: "-100vw" }
         }
       >
+        <li className="nav-item side-nav-serach">
+          <input
+            type="search"
+            placeholder="نام محصول را وارد کنید"
+            ref={searchInputNav}
+          />
+          <Link
+            to="/search"
+            onClick={() => {
+              dispatch(searchProduct(searchInputNav.current.value));
+            }}
+            className="side-nav-search-btn"
+          >
+            <BsSearch />
+          </Link>
+        </li>
         {navList.map((item) => {
           return (
             <li className="nav-item" key={item.content}>
