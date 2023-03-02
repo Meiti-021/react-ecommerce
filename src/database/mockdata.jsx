@@ -61,7 +61,7 @@ const navList = [
     content: "کامپیوتر",
   },
   {
-    address: "",
+    address: "/about-us",
     content: "درباره ما",
   },
   {
