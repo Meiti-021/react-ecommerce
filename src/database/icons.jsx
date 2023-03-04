@@ -5,7 +5,11 @@ import {
   FaSortAmountDownAlt,
   FaHistory,
 } from "react-icons/Fa";
-import { AiFillDelete } from "react-icons/ai";
+import {
+  AiFillDelete,
+  AiOutlinePlusCircle,
+  AiOutlineMinusCircle,
+} from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { FiShoppingCart, FiSettings } from "react-icons/fi";
 import { TfiMenu } from "react-icons/tfi";
@@ -98,4 +102,6 @@ export {
   BsFillCreditCardFill,
   FiSettings,
   AiFillDelete,
+  AiOutlinePlusCircle,
+  AiOutlineMinusCircle,
 };

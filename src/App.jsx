@@ -14,6 +14,7 @@ import Page404 from "./pages/Page404";
 import AllOfProducts from "./pages/AllProducts";
 import SearchPage from "./pages/SearchPage";
 import AboutUs from "./pages/AboutUs";
+import Support from "./pages/Support";
 function App() {
   return (
     <div className="App">
@@ -31,6 +32,7 @@ function App() {
           <Route path="/account-info" element={<LoginPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/support" element={<Support />} />
           <Route path={"/products/:id"} element={<ProductInfo />} />
           <Route path={"/*"} element={<Page404 />} />
         </Routes>
