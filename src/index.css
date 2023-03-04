@@ -2564,6 +2564,7 @@ main {
   margin-bottom: 55px;
   font-size: 14px;
   margin-top: -20px;
+  direction: rtl;
 }
 
 .faq-container {
