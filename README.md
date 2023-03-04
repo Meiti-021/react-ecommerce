@@ -4,7 +4,7 @@
 
 ## Preview
 
-![preview](src/assets/preview.gif)
+![preview](./src/assets/preview.gif)
 
 ## Description
 
