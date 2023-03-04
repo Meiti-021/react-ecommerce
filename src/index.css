@@ -368,6 +368,9 @@ header {
   transition: 0.5s transform;
   cursor: pointer;
 }
+.side-nav li:last-child {
+  border-bottom: none;
+}
 .side-nav li:hover {
   transform: translate(0px, -7px);
   color: var(--main-accent-color);
