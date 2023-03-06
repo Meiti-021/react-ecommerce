@@ -46,11 +46,11 @@ const WishListItem = ({ name, priceOn, id }) => {
             disPatch(removeItemWishList(id));
           }}
         >
-          افزودن به سبد
+          <span className="extra"> افزودن به سبد</span>
           <FiShoppingCart className="add-to-cart-icon" />
         </button>
         <Link className="more-info" to={`/products/${id.split(".")[0]}`}>
-          مشاهده جزئیات
+          <span className="extra">جزئیات</span> مشاهده
         </Link>
       </div>
     </div>

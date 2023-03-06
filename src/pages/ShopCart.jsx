@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ShopCartItem from "./ShopcartItem";
 import { FiShoppingCart } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +11,7 @@ const Shopcart = () => {
   const { isLogin } = useSelector((state) => state.user);
   const [totalPrice, setTotalPrice] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const modalRef = useRef(null);
   useEffect(() => {
     let total = 0;
     productList.forEach((element) => {
@@ -19,13 +19,18 @@ const Shopcart = () => {
     });
     setTotalPrice(total);
   }, [productList]);
+  useEffect(() => {
+    if (isModalOpen) {
+      window.scrollTo(0, modalRef.current.getBoundingClientRect().top);
+    }
+  }, [isModalOpen]);
   return (
     <div className="shop-cart">
       <div
         className="shop-cart-modal-container"
         style={isModalOpen ? { display: "flex" } : { display: "none" }}
       >
-        <div className="shop-cart-modal">
+        <div className="shop-cart-modal" ref={modalRef}>
           <p>آیا از ثبت سفارش مطمئن هستید؟</p>
           <div>
             <button

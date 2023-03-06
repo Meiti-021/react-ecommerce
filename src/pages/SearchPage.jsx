@@ -13,10 +13,8 @@ const SearchPage = () => {
   useEffect(() => {
     const arr = [];
     AllProducts.forEach((item) => {
-      if (products.length > 0) {
-        if (item.model.toLowerCase().includes(search.toLowerCase())) {
-          arr.push(item);
-        }
+      if (item.model.toLowerCase().includes(search.toLowerCase())) {
+        arr.push(item);
       }
     });
     setProducts(arr);

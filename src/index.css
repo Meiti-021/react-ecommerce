@@ -94,7 +94,7 @@ header {
   width: 600px;
   border-radius: 2px;
   border: none;
-  padding-right: 15px;
+  padding: 0px 15px;
   font-family: iransans;
 }
 
@@ -357,6 +357,7 @@ header {
   background-color: var(--main-bg-color);
   transition: 0.5s right;
   opacity: 0;
+  padding-bottom: 50px;
 }
 .side-nav li {
   height: 50px;
@@ -1952,6 +1953,25 @@ main {
   }
   .shop-cart-total-price p {
     font-size: 18px;
+  }
+  .wish-list-item .extra {
+    display: none;
+  }
+  .wish-list-item .name,
+  .shop-cart-item .name {
+    font-size: 10px !important;
+  }
+  .wish-list-item .price,
+  .shop-cart-item .price {
+    font-size: 10px !important;
+  }
+  .wish-list-item .add-to-cart {
+    width: 50px;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
